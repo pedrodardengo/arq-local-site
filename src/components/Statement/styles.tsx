@@ -25,13 +25,13 @@ export const Wrapper = styled.div<{ isVisible: boolean }>`
 
 export const ChevronDiv = styled.div<{ isEntireBoxVisible: boolean }>`
 	position: absolute;
-	width: 50px;
-	height: 50px;
+	width: 60px;
+	height: 60px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	bottom: 0;
-	left: calc(50% - 25px);
+	left: calc(50% - 30px);
 	opacity: ${(props) => (props.isEntireBoxVisible ? '1' : '0')};
 	transition: opacity 0.5s ease;
 	> svg {
@@ -39,8 +39,8 @@ export const ChevronDiv = styled.div<{ isEntireBoxVisible: boolean }>`
 		transition: height 0.5s ease;
 		margin-bottom: 100px;
 		&:hover {
-			height: 40px;
-			width: 40px;
+			height: 60px;
+			width: 60px;
 		}
 	}
 `
