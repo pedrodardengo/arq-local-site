@@ -103,6 +103,6 @@ export const SignatureWrapper = styled.div`
 	align-items: center;
 	text-align: center;
 	> p {
-		font-size: ${THEME.fontSize.smallText}px;
+		font-size: ${THEME.fontSize.smallerText}px;
 	}
 `

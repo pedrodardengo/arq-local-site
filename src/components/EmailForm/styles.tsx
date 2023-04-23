@@ -54,7 +54,7 @@ export const TextArea = styled.textarea`
 `
 
 export const AlertMessage = styled.span`
-	font-size: ${THEME.fontSize.smallText}px;
+	font-size: ${THEME.fontSize.smallerText}px;
 	color: #333;
 	padding-left: 8px;
 `

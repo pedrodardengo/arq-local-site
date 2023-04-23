@@ -1,6 +1,6 @@
 import React from 'react'
-import AccordionTab from '@/components/AccordionTab'
 import * as S from './styles'
+import THEME from '@/styles/theme'
 import ContactButton from '@/components/Buttons/ContactButton'
 
 const OurJobSection = () => {
@@ -8,39 +8,44 @@ const OurJobSection = () => {
 		<S.Wrapper>
 			<S.Content>
 				<S.TitleWrapper>
-					<h3>/ o que fazemos</h3>
+					<p style={{ fontSize: THEME.fontSize.smallText }}>/ o que fazemos</p>
+					<br />
+					<br />
 					<h2>
-						Somos um estúdio de arquitetura e design, serviços que podem ser
-						contratados individualmente ou em conjunto, para potencializar
-						resultados.
+						Somos um estúdio de arquitetura e design. Sempre que possível,
+						unimos as duas áreas para potencializar os resultados.
 					</h2>
-					<ContactButton>Quero meu projeto</ContactButton>
 				</S.TitleWrapper>
-				<S.AccordionWrapper>
-					<p>
-						Com criatividade e estratégia, atuamos principalmente nas áreas de:
-					</p>
-					<br />
-					<br />
-					<AccordionTab title={'Arquitetura'}>Top arquiteturas.</AccordionTab>
-					<AccordionTab title={'Design'}>
-						Bla bla bla bla:
-						<br /> - Branding
-						<br /> - Comunicação Visual
-						<br /> - Editorial
-						<br /> - Naming
-					</AccordionTab>
-				</S.AccordionWrapper>
+				<S.JobContent>
+					<S.JobHeader>
+						<p style={{ fontWeight: THEME.fontWeight.semiBold }}>Arquitetura</p>
+					</S.JobHeader>
+					<S.JobDescription>
+						<p>
+							Espaços para serem vivenciados em sua plenitude. Projetos
+							arquitetônicos completos, da concepção ao executivo. Residencial,
+							comercial, corporativo, cultural e urbano. Para construções novas,
+							reformas totais ou interiores.
+						</p>
+					</S.JobDescription>
+				</S.JobContent>
+				<S.JobContent>
+					<S.JobHeader>
+						<p style={{ fontWeight: THEME.fontWeight.semiBold }}>Design</p>
+					</S.JobHeader>
+					<S.JobDescription>
+						<p>
+							Produtos especiais com identidade e propósito. Projetos de design
+							para a expressão visual de negócios ou espaços, da concepção à
+							implementação. Publicidade para empreendimentos imobiliários,
+							naming, branding, editorial e comunicação visual.
+						</p>
+					</S.JobDescription>
+				</S.JobContent>
+				<ContactButton>Quero Meu Projeto</ContactButton>
 			</S.Content>
 		</S.Wrapper>
 	)
 }
 
 export default OurJobSection
-
-// <ul>
-// <li>Branding</li>
-// <li>Comunicação Visual</li>
-// <li>Editorial</li>
-// <li>Naming</li>
-// </ul>
