@@ -22,6 +22,9 @@ export const Content = styled.div`
 `
 export const SectionTitleDiv = styled.div`
 	margin-bottom: 40px;
+	> p {
+		font-size: ${THEME.fontSize.smallText};
+	}
 `
 export const StepsGrid = styled.div`
 	position: relative;

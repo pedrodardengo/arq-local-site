@@ -48,6 +48,7 @@ const GlobalStyles = createGlobalStyle`
 		h1 {
 			font-weight: ${THEME.fontWeight.semiBold};
 			font-size: ${THEME.fontSize.title1Desktop}px;
+			font-family: ${THEME.fonts.secondaryFont};
 
 			@media (max-width: ${THEME.screenSize.tablet}px) {
 				font-size: ${THEME.fontSize.title1Tablet}px;

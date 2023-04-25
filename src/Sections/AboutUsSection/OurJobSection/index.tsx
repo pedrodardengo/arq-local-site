@@ -8,7 +8,7 @@ const OurJobSection = () => {
 		<S.Wrapper>
 			<S.Content>
 				<S.TitleWrapper>
-					<p style={{ fontSize: THEME.fontSize.smallText }}>/ o que fazemos</p>
+					<p>/ o que fazemos</p>
 					<br />
 					<br />
 					<h2>

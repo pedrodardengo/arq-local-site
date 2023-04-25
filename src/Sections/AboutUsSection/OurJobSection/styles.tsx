@@ -8,11 +8,11 @@ export const Wrapper = styled.div`
 export const Content = styled.div`
 	position: relative;
 	left: 12.5%;
-	width: 50%;
+	width: 62.5%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	gap: 64px;
+	gap: 32px;
 
 	@media (max-width: ${THEME.screenSize.tablet}px) {
 		left: 16.6%;
@@ -23,7 +23,11 @@ export const Content = styled.div`
 		width: 75%;
 	}
 `
-export const TitleWrapper = styled.div``
+export const TitleWrapper = styled.div`
+	> p {
+		font-size: ${THEME.fontSize.smallText};
+	}
+`
 
 export const JobContent = styled.div`
 	width: 100%;

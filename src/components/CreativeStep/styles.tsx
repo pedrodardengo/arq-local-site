@@ -7,7 +7,6 @@ export const Wrapper = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-self: flex-start;
-	justify-self: flex-start;
 `
 
 export const HeaderDiv = styled.div`
@@ -49,7 +48,7 @@ export const ImageDiv = styled.div`
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		top: 100%;
+		top: 105%;
 		background-color: ${THEME.colors.accentColor};
 		color: ${THEME.colors.secondaryColor};
 		padding: 25px;

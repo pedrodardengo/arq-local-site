@@ -7,7 +7,7 @@ const TeamSection = () => {
 		<S.Wrapper>
 			<S.Content>
 				<S.TitleWrapper>
-					<p style={{ fontSize: THEME.fontSize.smallText }}>/ equipe</p>
+					<p>/ equipe</p>
 					<br />
 					<br />
 					<h2>
