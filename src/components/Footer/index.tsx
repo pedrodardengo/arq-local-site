@@ -40,7 +40,7 @@ const Footer = () => {
 				<S.UpperContent>
 					<InstagramFeed />
 				</S.UpperContent>
-				<S.MiddleContent>
+				<S.CenterContent>
 					<S.LeftElement>
 						<ContactUsIconBox />
 						<p>
@@ -56,7 +56,7 @@ const Footer = () => {
 							onClick={scrollToStart}
 						/>
 					</S.RightElement>
-				</S.MiddleContent>
+				</S.CenterContent>
 				<S.SignatureWrapper>
 					<p>
 						{signature}

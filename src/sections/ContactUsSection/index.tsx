@@ -5,6 +5,8 @@ import Statement from '@/components/Statement'
 import ContactButton from '@/components/Buttons/ContactButton'
 import { useWindowDimensions } from '@/utils/useWindowDimensions'
 import THEME from '@/styles/theme'
+import NextImage from 'next/image'
+import logo from '../../../public/img/al-logo-orange-5.svg'
 
 const ContactUsSection = React.forwardRef<HTMLDivElement>((props, ref) => {
 	const [statement, setStatement] = React.useState(<></>)
@@ -35,19 +37,31 @@ const ContactUsSection = React.forwardRef<HTMLDivElement>((props, ref) => {
 			</S.StatementDiv>
 
 			<S.Content>
-				<S.ActionContainer>
-					<h2>Vamos juntos realizar o seu projeto?</h2>
-					<ContactButton style={{ marginTop: 20 }}>
-						Fale com a gente!
-					</ContactButton>
-				</S.ActionContainer>
-				<S.FormContainer>
-					<p>
-						Se preferir, preencha os campos abaixo e entraremos em contato com
-						você.
-					</p>
-					<EmailForm />
-				</S.FormContainer>
+				<h2>Vamos juntos realizar o seu projeto?</h2>
+				<br />
+				<br />
+
+				<S.ResponsiveContent>
+					<S.FormContainer>
+						<ContactButton style={{ marginBottom: 32 }}>
+							Fale com a gente!
+						</ContactButton>
+						<p>
+							Se preferir, preencha os campos abaixo e entraremos em contato com
+							você.
+						</p>
+						<EmailForm />
+					</S.FormContainer>
+					<S.LogoContainer>
+						<NextImage src={logo} alt={'Arq Local Logo'} />
+						<p>
+							Estúdio de Arquitetura e Design. <br />
+							Belo Horizonte, Minas Gerais . Brasil <br />
+							contato@local.arq.br <br />
+							+55 31 972670550
+						</p>
+					</S.LogoContainer>
+				</S.ResponsiveContent>
 			</S.Content>
 		</S.Wrapper>
 	)

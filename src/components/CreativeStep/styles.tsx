@@ -44,8 +44,8 @@ export const ImageDiv = styled.div`
 	> div {
 		position: absolute;
 		display: flex;
-		justify-content: center;
-		align-items: center;
+		justify-content: flex-start;
+		align-items: flex-start;
 		top: 105%;
 		background-color: ${THEME.colors.accentColor};
 		color: ${THEME.colors.secondaryColor};

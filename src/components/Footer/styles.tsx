@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
 	width: 100%;
 `
 export const UpperContent = styled.div`
-	margin-bottom: 40px;
+	margin-bottom: 128px;
 	min-height: 80px;
 	display: flex;
 	align-items: center;
@@ -24,7 +24,7 @@ export const UpperContent = styled.div`
 	}
 `
 
-export const MiddleContent = styled.div`
+export const CenterContent = styled.div`
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -34,11 +34,11 @@ export const MiddleContent = styled.div`
 		justify-content: flex-start;
 		flex-direction: column;
 		gap: 20px;
+		margin-top: 20px;
 	}
 `
 export const ContentWrapper = styled.div`
 	width: 75%;
-	gap: 20px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -94,9 +94,9 @@ export const IconDiv = styled.span`
 export const SignatureWrapper = styled.div`
 	border: none;
 	color: ${THEME.colors.lightGrey};
-	padding: 8px;
 	width: 100%;
-	margin-bottom: 10px;
+	margin-top: 64px;
+	margin-bottom: 32px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
