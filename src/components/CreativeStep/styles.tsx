@@ -28,8 +28,6 @@ export const ImageDiv = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	min-width: 180px;
-	min-height: 180px;
 	aspect-ratio: 1;
 	> img {
 		width: 70%;

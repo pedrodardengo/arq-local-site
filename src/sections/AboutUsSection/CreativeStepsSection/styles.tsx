@@ -29,13 +29,13 @@ export const SectionTitleDiv = styled.div`
 export const StepsGrid = styled.div`
 	position: relative;
 	display: grid;
-	grid-template-columns: repeat(4, minmax(250px, 1fr));
+	grid-template-columns: repeat(4, minmax(0px, 1fr));
 
-	@media (max-width: ${(4 * 250) / 0.625}px) {
-		grid-template-columns: repeat(2, minmax(250px, 1fr));
+	@media (max-width: ${THEME.screenSize.tablet}px) {
+		grid-template-columns: repeat(2, minmax(0px, 1fr));
 	}
 
-	@media (max-width: ${(2 * 250) / 0.666}px) {
-		grid-template-columns: repeat(1, minmax(250px, 1fr));
+	@media (max-width: ${THEME.screenSize.mobile}px) {
+		grid-template-columns: repeat(1, minmax(0px, 1fr));
 	}
 `

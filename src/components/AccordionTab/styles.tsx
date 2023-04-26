@@ -1,20 +1,15 @@
 import styled, { css, keyframes } from 'styled-components'
 import THEME from '@/styles/theme'
 
-export const AccordionTabContainer = styled.div`
-	width: 100%;
-`
+export const AccordionTabContainer = styled.div``
 
 export const AccordionTabHeader = styled.div`
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
 	box-sizing: border-box;
-	padding: 8px;
-	border-bottom: 1px solid ${THEME.colors.accentColor};
 	font-size: ${THEME.fontSize.title3Desktop}px;
 	font-weight: ${THEME.fontWeight.semiBold};
-	color: ${THEME.colors.primaryColor}
+	color: ${THEME.colors.primaryColor};
 	cursor: pointer;
 
 	@media (max-width: ${THEME.screenSize.tablet}px) {
@@ -93,5 +88,6 @@ export const IconWrapper = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 38px;
+	min-height: 25px;
+	width: 25px;
 `

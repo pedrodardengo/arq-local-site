@@ -1,6 +1,7 @@
 import React from 'react'
 import * as S from './styles'
 import THEME from '@/styles/theme'
+import AccordionTab from '@/components/AccordionTab'
 
 const TeamSection = () => {
 	return (
@@ -67,11 +68,11 @@ const TeamSection = () => {
 						</p>
 					</S.ProfileHeader>
 					<S.ProfileDescription>
-						<p>
+						<AccordionTab>
 							Letícia Tótaro - 2022 <br />
 							Iara Baiense - 2022 <br />
 							Luiza de Souza – 2021
-						</p>
+						</AccordionTab>
 					</S.ProfileDescription>
 				</S.ProfileContent>
 			</S.Content>

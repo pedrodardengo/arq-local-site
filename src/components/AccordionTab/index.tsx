@@ -1,24 +1,32 @@
 import React from 'react'
 import * as S from './styles'
-import { HiPlusCircle, HiPlus, HiMinus, HiMinusCircle } from 'react-icons/hi'
+import {
+	FaChevronDown,
+	FaChevronCircleDown,
+	FaChevronCircleUp,
+	FaChevronUp
+} from 'react-icons/fa'
 import THEME from '@/styles/theme'
 
 interface AccordionTabProps {
-	title: string
+	title?: string
 	children: React.ReactNode
 }
 
-const AccordionTab: React.FC<AccordionTabProps> = ({ title, children }) => {
-	const plus = <HiPlus size={0.8 * THEME.fontSize.title3Desktop} />
+const AccordionTab: React.FC<AccordionTabProps> = ({
+	title = '',
+	children
+}) => {
+	const plus = <FaChevronDown size={THEME.fontSize.title3Desktop} />
 	const plusCircle = (
-		<HiPlusCircle
+		<FaChevronCircleDown
 			color={THEME.colors.accentColor}
 			size={1.2 * THEME.fontSize.title3Desktop}
 		/>
 	)
-	const minus = <HiMinus size={0.8 * THEME.fontSize.title3Desktop} />
+	const minus = <FaChevronUp size={THEME.fontSize.title3Desktop} />
 	const minusCircle = (
-		<HiMinusCircle
+		<FaChevronCircleUp
 			color={THEME.colors.accentColor}
 			size={1.2 * THEME.fontSize.title3Desktop}
 		/>
@@ -39,13 +47,13 @@ const AccordionTab: React.FC<AccordionTabProps> = ({ title, children }) => {
 	}
 
 	return (
-		<S.AccordionTabContainer>
+		<S.AccordionTabContainer onClick={handleToggleAccordion}>
 			<S.AccordionTabHeader
 				onClick={handleToggleAccordion}
 				onMouseOver={OnMouseOverTab}
 				onMouseLeave={OnMouseLeaveTab}
 			>
-				<h3 onClick={handleToggleAccordion}>{title}</h3>
+				<h3>{title}</h3>
 				<S.IconWrapper>{icon}</S.IconWrapper>
 			</S.AccordionTabHeader>
 			<S.AccordionTabContent isOpen={isOpen}>
