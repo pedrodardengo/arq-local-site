@@ -51,7 +51,7 @@ export default class MyDocument extends Document {
 					rel="stylesheet"
 				/>
 				<link
-					href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap"
+					href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;500;600;700&display=swap"
 					rel="stylesheet"
 				/>
 				<meta

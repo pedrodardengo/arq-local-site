@@ -13,6 +13,7 @@ export const Wrapper = styled.div<{ isVisible: boolean }>`
 	height: 100lvh;
 	> h1 {
 		opacity: ${(props) => (props.isVisible ? '1' : '0')};
+		max-font-size: 65px;
 		transition: opacity 1s ease-in;
 		animation: ${(props) =>
 			props.isVisible

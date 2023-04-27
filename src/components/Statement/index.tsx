@@ -25,7 +25,9 @@ const Statement = ({
 	return (
 		<S.Wrapper isVisible={alreadyBeenSeen} style={style} ref={statementBoxRef}>
 			<h1 ref={statementRef}>
-				<Textfit mode="single">{children}</Textfit>
+				<Textfit mode="single" max={65}>
+					{children}
+				</Textfit>
 			</h1>
 			<S.ChevronDiv
 				isEntireBoxVisible={isVisible}

@@ -5,6 +5,7 @@ export const LogoWrapper = styled.div`
 	width: 50%;
 	display: flex;
 	align-items: center;
+	cursor: pointer;
 
 	img {
 		position: absolute;

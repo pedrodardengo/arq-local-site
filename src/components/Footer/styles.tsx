@@ -12,6 +12,21 @@ export const Wrapper = styled.div`
 	justify-content: center;
 	width: 100%;
 `
+
+export const ContentWrapper = styled.div`
+	width: 75%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+	@media (max-width: ${THEME.screenSize.tablet}px) {
+		width: 66%;
+	}
+	@media (max-width: ${THEME.screenSize.mobile}px) {
+		width: 75%;
+	}
+`
+
 export const UpperContent = styled.div`
 	margin-bottom: 128px;
 	min-height: 80px;
@@ -20,7 +35,7 @@ export const UpperContent = styled.div`
 	justify-content: center;
 
 	@media (max-width: ${THEME.screenSize.mobile}px) {
-		margin-bottom: 0;
+		margin-bottom: 32px;
 	}
 `
 
@@ -35,19 +50,6 @@ export const CenterContent = styled.div`
 		flex-direction: column;
 		gap: 20px;
 		margin-top: 20px;
-	}
-`
-export const ContentWrapper = styled.div`
-	width: 75%;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	flex-direction: column;
-	@media (max-width: ${THEME.screenSize.tablet}px) {
-		width: 66%;
-	}
-	@media (max-width: ${THEME.screenSize.mobile}px) {
-		width: 75%;
 	}
 `
 
@@ -86,6 +88,7 @@ export const IconDiv = styled.span`
 	gap: 4px;
 	margin-left: 4px;
 	> svg {
+		cursor: pointer;
 		&:hover {
 			color: ${THEME.colors.accentColor};
 		}

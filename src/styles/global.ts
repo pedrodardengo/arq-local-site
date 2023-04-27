@@ -46,7 +46,7 @@ const GlobalStyles = createGlobalStyle`
         }
       }
 		h1 {
-			font-weight: ${THEME.fontWeight.semiBold};
+			font-weight: ${THEME.fontWeight.medium};
 			font-size: ${THEME.fontSize.title1Desktop}px;
 			font-family: ${THEME.fonts.secondaryFont};
 

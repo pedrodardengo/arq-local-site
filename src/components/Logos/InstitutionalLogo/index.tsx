@@ -20,6 +20,9 @@ const InstitutionalLogo = ({
 		<S.LogoWrapper
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
+			style={{
+				cursor: onClick ? 'pointer' : 'default'
+			}}
 		>
 			<NextImage
 				onClick={onClick}

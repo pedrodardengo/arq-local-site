@@ -72,6 +72,7 @@ export const IconsBox = styled.div<{ color: string }>`
 	color: ${(props) => props.color};
 
 	> svg {
+		cursor: pointer;
 		&:hover {
 			color: ${THEME.colors.accentColor};
 		}
