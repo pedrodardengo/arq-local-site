@@ -1,22 +1,22 @@
 import { useEffect, useState } from 'react'
 
 export function useWindowDimensions(): {
-	windowWidth: number
-	windowHeight: number
+	width: number
+	height: number
 } {
 	const [windowDimension, setWindowDimensions] = useState({
-		windowWidth: 0,
-		windowHeight: 0
+		width: 0,
+		height: 0
 	})
 	useEffect(() => {
 		setWindowDimensions({
-			windowWidth: window.innerWidth,
-			windowHeight: window.innerHeight
+			width: window.innerWidth,
+			height: window.innerHeight
 		})
 		function handleResize() {
 			setWindowDimensions({
-				windowWidth: window.innerWidth,
-				windowHeight: window.innerHeight
+				width: window.innerWidth,
+				height: window.innerHeight
 			})
 		}
 		window.addEventListener('resize', handleResize)

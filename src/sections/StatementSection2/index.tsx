@@ -9,7 +9,7 @@ const StatementSection2 = () => {
 	const windowDimension = useWindowDimensions()
 
 	React.useEffect(() => {
-		if (windowDimension.windowWidth < THEME.screenSize.mobile) {
+		if (windowDimension.width < THEME.screenSize.mobile) {
 			setStatement(
 				<>
 					Prática criativa <br />

@@ -1,42 +1,14 @@
 import React from 'react'
 import * as S from './styles'
 import NextImage from 'next/image'
-import Statement from '@/components/Statement'
-import { useWindowDimensions } from '@/utils/useWindowDimensions'
-import THEME from '@/styles/theme'
 import { useOnInterval } from '@/utils/useOnInterval'
 
 const PhilosophySection = React.forwardRef<HTMLDivElement>((props, ref) => {
 	const [imageIndex, setImageIndex] = React.useState(1)
-	const [statement, setStatement] = React.useState(<></>)
-	const windowDimension = useWindowDimensions()
 	useOnInterval(
 		() => setImageIndex(imageIndex + 1 > 5 ? 1 : imageIndex + 1),
 		1000
 	)
-	React.useEffect(() => {
-		if (windowDimension.windowWidth < THEME.screenSize.mobile) {
-			setStatement(
-				<>
-					Uma lente focada <br />
-					na demanda específica <br />
-					e outra com vista <br />
-					panorâmica do lugar, <br />
-					do contexto e da <br />
-					atualidade.
-				</>
-			)
-		} else {
-			setStatement(
-				<>
-					Uma lente focada na demanda <br />
-					específica e outra com vista <br />
-					panorâmica do lugar, do contexto <br />e da atualidade.
-				</>
-			)
-		}
-	}, [windowDimension])
-
 	return (
 		<S.Wrapper ref={ref}>
 			<S.Content>
@@ -101,9 +73,6 @@ const PhilosophySection = React.forwardRef<HTMLDivElement>((props, ref) => {
 					</p>
 				</S.ParagraphWrapper>
 			</S.Content>
-			<S.StatementDiv>
-				<Statement>{statement}</Statement>
-			</S.StatementDiv>
 		</S.Wrapper>
 	)
 })

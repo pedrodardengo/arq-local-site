@@ -1,7 +1,6 @@
 This is the project of web-site for the Arquitetura Local company.
 
-The project is developed using Next.js, Typescript and Storybook. Besides the direct satisfaction of the customer,
-code quality as well as confidence on deploy with the use of tests are one of the goals of this project.
+The project is developed using Next.js, Typescript and Storybook.
 
 ## Getting Started
 

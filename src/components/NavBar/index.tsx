@@ -25,7 +25,7 @@ const NavBar = ({
 	contactUsRef,
 	researchRef
 }: NavBarProps) => {
-	const windowWidth = useWindowDimensions().windowWidth
+	const windowWidth = useWindowDimensions().width
 	const [elementsColor, setElementsColor] = React.useState(
 		THEME.colors.secondaryColor
 	)

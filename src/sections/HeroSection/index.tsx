@@ -12,9 +12,11 @@ const HeroSection = React.forwardRef<HTMLDivElement>((props, ref) => {
 	const [slideImages, setSlideImages] = React.useState<SlideImage[]>([])
 
 	const getSlideImages = () => {
-		axios.get('/api/get-slide-images').then(function (response) {
-			setSlideImages(response.data)
-		})
+		axios
+			.get('/api/get-list-of-images', { params: { imageList: 'slide_images' } })
+			.then(function (response) {
+				setSlideImages(response.data)
+			})
 	}
 
 	React.useEffect(() => {
@@ -25,7 +27,7 @@ const HeroSection = React.forwardRef<HTMLDivElement>((props, ref) => {
 		<S.Wrapper ref={ref}>
 			<SlideShow>
 				{slideImages.map((slideImage, index) => {
-					return <img key={index} src={slideImage.url} alt={slideImage.url} />
+					return <img key={index} src={slideImage.url} alt={slideImage.alt} />
 				})}
 			</SlideShow>
 		</S.Wrapper>

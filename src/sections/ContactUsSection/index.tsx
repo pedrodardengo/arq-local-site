@@ -13,7 +13,7 @@ const ContactUsSection = React.forwardRef<HTMLDivElement>((props, ref) => {
 	const windowDimension = useWindowDimensions()
 
 	React.useEffect(() => {
-		if (windowDimension.windowWidth < THEME.screenSize.mobile) {
+		if (windowDimension.width < THEME.screenSize.mobile) {
 			setStatement(
 				<>
 					Estamos aqui para <br />

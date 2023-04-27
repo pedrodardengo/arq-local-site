@@ -17,7 +17,7 @@ const Footer = () => {
 	const windowDimension = useWindowDimensions()
 
 	React.useEffect(() => {
-		if (windowDimension.windowWidth < THEME.screenSize.tablet) {
+		if (windowDimension.width < THEME.screenSize.tablet) {
 			setSignature(
 				<>
 					Todos os direitos reservados. © 2023 Arquitetura Local.
