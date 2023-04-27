@@ -33,10 +33,6 @@ export const UpperContent = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-
-	@media (max-width: ${THEME.screenSize.mobile}px) {
-		margin-bottom: 32px;
-	}
 `
 
 export const CenterContent = styled.div`

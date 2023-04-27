@@ -6,7 +6,6 @@ export const FormContainer = styled.form`
 	flex-direction: column;
 	align-items: flex-start;
 	gap: 2px;
-	max-width: 700px;
 	min-width: 120px;
 	::selection {
 		background-color: ${THEME.colors.accentColor} !important;
@@ -42,7 +41,6 @@ export const TextArea = styled.textarea`
 	border: none;
 	resize: vertical;
 	min-height: 120px;
-	border-bottom: 1px solid ${THEME.colors.primaryColor};
 	font-size: ${THEME.fontSize.textDesktop}px;
 	font-family: ${THEME.fonts.primaryFont};
 	-webkit-rtl-ordering: logical;
@@ -59,18 +57,18 @@ export const AlertMessage = styled.span`
 `
 
 export const Button = styled.button`
-	margin-top: 10px;
+	margin-top: 2px;
 	padding: 8px;
 	width: 100%;
 	display: flex;
 	justify-content: left;
 	align-items: center;
 	gap: 10px;
-	border: 1px solid ${THEME.colors.primaryColor};
+	border: 1px solid ${THEME.colors.accentColor};
 	color: ${THEME.colors.primaryColor};
 	background-image: linear-gradient(
-		${THEME.colors.primaryColor},
-		${THEME.colors.primaryColor}
+		${THEME.colors.accentColor},
+		${THEME.colors.accentColor}
 	);
 	background-size: 0 100%;
 	background-repeat: no-repeat;

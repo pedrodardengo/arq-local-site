@@ -36,9 +36,10 @@ function Slider({
 	}, [baseOffset, sliderDuration, listBaseWidth])
 
 	function onResizeHandler() {
-		setNumberOfCloneLists(
-			Math.ceil((2 * windowDimensions.width) / listBaseWidth)
+		const numberOfClones = Math.ceil(
+			(2 * windowDimensions.width) / listBaseWidth
 		)
+		setNumberOfCloneLists(Math.max(2, numberOfClones))
 	}
 	useOnEventListener(onResizeHandler, 'resize', true)
 	const allSliderLists = Array.from({ length: numberOfCloneLists }, (_, i) => {
