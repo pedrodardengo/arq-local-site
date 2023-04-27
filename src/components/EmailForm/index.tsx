@@ -16,6 +16,7 @@ import {
 	ValidationMapper
 } from '@/components/EmailForm/validationLogic/validationMapper'
 import THEME from '@/styles/theme'
+import { FaChevronRight } from 'react-icons/fa'
 
 const EmailForm = ({ style }: { style?: React.CSSProperties }) => {
 	const [formData, setFormData] =
@@ -64,8 +65,9 @@ const EmailForm = ({ style }: { style?: React.CSSProperties }) => {
 		})
 		event.preventDefault()
 		if (JSON.stringify(validationState) == JSON.stringify(allValid)) {
-			console.log('SENDING EMAIL')
 			await sendClientAcquisitionEmail(formData)
+			setFormData(noValue)
+			setValidationMessage(noAlert)
 		}
 	}
 	return (
@@ -84,7 +86,7 @@ const EmailForm = ({ style }: { style?: React.CSSProperties }) => {
 				type="email"
 				id="email"
 				name="email"
-				placeholder="Email"
+				placeholder="E-mail"
 				value={formData.email}
 				onChange={handleInputChange}
 				onBlur={handleOnBlur}
@@ -104,13 +106,16 @@ const EmailForm = ({ style }: { style?: React.CSSProperties }) => {
 			<S.TextArea
 				id="message"
 				name="message"
-				placeholder="Message"
+				placeholder="Mensagem"
 				value={formData.message}
 				onChange={handleInputChange}
 				onBlur={handleOnBlur}
 			/>
 			<AlertMessage>{validationMessage.message}</AlertMessage>
-			<S.Button type="submit">{'enviar >'}</S.Button>
+			<S.Button type="submit">
+				<p>enviar</p>
+				<FaChevronRight size={14} />
+			</S.Button>
 			<span style={{ fontSize: THEME.fontSize.smallerText, padding: 4 }}>
 				Ao enviar, você nos autoriza utilizar estes dados para entrarmos em
 				contato.

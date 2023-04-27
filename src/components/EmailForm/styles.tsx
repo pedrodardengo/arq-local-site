@@ -16,10 +16,10 @@ export const FormContainer = styled.form`
 
 export const Input = styled.input`
 	width: 100%;
-	padding: 8px;
+	padding: 0 8px 4px 0;
 	border: 0;
 	font-size: ${THEME.fontSize.textDesktop}px;
-	border-bottom: 1px solid ${THEME.colors.accentColor};
+	border-bottom: 1px solid ${THEME.colors.primaryColor};
 	color: ${THEME.colors.primaryColor};
 	font-family: ${THEME.fonts.primaryFont};
 
@@ -39,11 +39,10 @@ export const Input = styled.input`
 
 export const TextArea = styled.textarea`
 	width: 100%;
-	padding: 8px;
 	border: none;
 	resize: vertical;
 	min-height: 120px;
-	border-bottom: 1px solid ${THEME.colors.accentColor};
+	border-bottom: 1px solid ${THEME.colors.primaryColor};
 	font-size: ${THEME.fontSize.textDesktop}px;
 	font-family: ${THEME.fonts.primaryFont};
 	-webkit-rtl-ordering: logical;
@@ -65,6 +64,8 @@ export const Button = styled.button`
 	width: 100%;
 	display: flex;
 	justify-content: left;
+	align-items: center;
+	gap: 10px;
 	border: 1px solid ${THEME.colors.primaryColor};
 	color: ${THEME.colors.primaryColor};
 	background-image: linear-gradient(

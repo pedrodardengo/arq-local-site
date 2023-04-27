@@ -48,7 +48,7 @@ export const ResponsiveContent = styled.div`
 	}
 `
 
-export const FormContainer = styled.div`
+export const FormDiv = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 32px;
@@ -58,12 +58,15 @@ export const FormContainer = styled.div`
 	}
 `
 
-export const LogoContainer = styled.div`
+export const LogoDiv = styled.div`
 	display: flex;
-	flex-direction: column;
-	gap: 20px;
 	width: 20%;
+	gap: 20px;
+	flex-direction: column;
+	align-items: flex-start;
 	> img {
+		width: 100%;
+		height: auto;
 		aspect-ratio: 1;
 	}
 

@@ -30,7 +30,7 @@ export const StepsGrid = styled.div`
 	position: relative;
 	display: grid;
 	grid-template-columns: repeat(4, minmax(0px, 1fr));
-
+	grid-template-rows: auto;
 	@media (max-width: ${THEME.screenSize.tablet}px) {
 		grid-template-columns: repeat(2, minmax(0px, 1fr));
 	}

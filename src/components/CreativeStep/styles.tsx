@@ -11,6 +11,8 @@ export const Wrapper = styled.div`
 
 export const HeaderDiv = styled.div`
 	margin-bottom: 10px;
+	margin-left: 8px;
+	z-index: 1;
 `
 
 export const NumberSpan = styled.div`
@@ -22,36 +24,44 @@ export const TitleSpan = styled.div`
 	font-weight: ${THEME.fontWeight.semiBold};
 `
 
-export const ImageDiv = styled.div`
+export const ImageDiv = styled.div<{
+	descMinHeight: number
+}>`
 	position: relative;
-	overflow: hidden;
 	display: flex;
+	clip-path: polygon(0 0, 100% 0, 100% 1000%, 0 1000%);
 	justify-content: center;
-	align-items: center;
-	aspect-ratio: 1;
+	align-items: flex-start;
+	transition: z-index 2s ease;
+	z-index: 2;
 	> img {
 		width: 70%;
 		height: 70%;
+		pointer-events: none;
 	}
 
 	&:hover {
+		z-index: 20;
 		> div {
+			z-index: 20;
 			opacity: 1;
-			top: 0;
+			transform: translateY(100%);
 		}
 	}
 
 	> div {
 		position: absolute;
+		z-index: 1;
 		display: flex;
-		justify-content: flex-start;
-		align-items: flex-start;
-		top: 105%;
+		justify-content: center;
+		align-items: center;
 		background-color: ${THEME.colors.accentColor};
 		color: ${THEME.colors.secondaryColor};
 		padding: 25px;
-		transition: top 0.6s ease;
-		height: 100%;
+		min-height: ${(props) => props.descMinHeight}px;
+		width: 100%;
+		bottom: 101%;
 		pointer-events: none;
+		transition: all 0.6s ease;
 	}
 `
