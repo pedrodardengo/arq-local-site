@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint src --max-warnings=0 --fix",
-    "test": "jest -c ./jest.config.js",
+    "test": "jest -c ./jest.config.js --passWithNoTests",
     "generate": "yarn plop --plopfile generators/plopfile.js",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
