@@ -73,5 +73,14 @@ export const LogoDiv = styled.div`
 	@media (max-width: ${THEME.screenSize.tablet}px) {
 		justify-content: left;
 		width: 100%;
+		> img {
+			width: 50%;
+		}
+	}
+
+	@media (max-width: ${THEME.screenSize.mobile}px) {
+		> img {
+			width: 75%;
+		}
 	}
 `
