@@ -15,7 +15,6 @@ import {
 	fieldToValidator,
 	ValidationMapper
 } from '@/components/EmailForm/validationLogic/validationMapper'
-import THEME from '@/styles/theme'
 import { FaChevronRight } from 'react-icons/fa'
 
 const EmailForm = ({ style }: { style?: React.CSSProperties }) => {
@@ -116,10 +115,10 @@ const EmailForm = ({ style }: { style?: React.CSSProperties }) => {
 				<p>enviar</p>
 				<FaChevronRight size={14} />
 			</S.Button>
-			<span style={{ fontSize: THEME.fontSize.smallerText, padding: 4 }}>
+			<p style={{ padding: 4 }}>
 				Ao enviar, você nos autoriza utilizar estes dados para entrarmos em
 				contato.
-			</span>
+			</p>
 		</S.FormContainer>
 	)
 }

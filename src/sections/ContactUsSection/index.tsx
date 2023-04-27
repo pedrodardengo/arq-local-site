@@ -37,7 +37,7 @@ const ContactUsSection = React.forwardRef<HTMLDivElement>((props, ref) => {
 			<S.Content>
 				<h2>Vamos juntos realizar o seu projeto?</h2>
 				<ContactButton>Fale com a gente!</ContactButton>
-				<div>
+				<div style={{ width: '100%' }}>
 					<p style={{ marginBottom: 32 }}>
 						Se preferir, preencha os campos abaixo e entraremos em contato com
 						você.

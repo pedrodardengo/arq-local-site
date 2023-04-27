@@ -25,7 +25,6 @@ export const Content = styled.div`
 	align-items: flex-start;
 	justify-content: center;
 	gap: 64px;
-	margin-top: 64px;
 	height: 100lvh;
 	left: 12.5%;
 	width: 62.5%;

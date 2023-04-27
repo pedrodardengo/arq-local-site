@@ -12,7 +12,7 @@ export const Content = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	gap: 40px;
+	gap: 64px;
 
 	@media (max-width: ${THEME.screenSize.tablet}px) {
 		left: 16.6%;
