@@ -111,7 +111,7 @@ const EmailForm = ({ style }: { style?: React.CSSProperties }) => {
 			/>
 			<AlertMessage>{validationMessage.message}</AlertMessage>
 			<S.Button type="submit">{'enviar >'}</S.Button>
-			<span style={{ fontSize: THEME.fontSize.smallText, padding: 4 }}>
+			<span style={{ fontSize: THEME.fontSize.smallerText, padding: 4 }}>
 				Ao enviar, você nos autoriza utilizar estes dados para entrarmos em
 				contato.
 			</span>

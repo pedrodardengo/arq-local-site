@@ -1,20 +1,44 @@
 import React from 'react'
 import * as S from './styles'
-import { useOnInterval } from '@/utils/useOnInterval'
 import NextImage from 'next/image'
 import Statement from '@/components/Statement'
+import { useWindowDimensions } from '@/utils/useWindowDimensions'
+import THEME from '@/styles/theme'
+import { useOnInterval } from '@/utils/useOnInterval'
 
 const PhilosophySection = React.forwardRef<HTMLDivElement>((props, ref) => {
 	const [imageIndex, setImageIndex] = React.useState(1)
+	const [statement, setStatement] = React.useState(<></>)
+	const windowDimension = useWindowDimensions()
 	useOnInterval(
 		() => setImageIndex(imageIndex + 1 > 5 ? 1 : imageIndex + 1),
 		1000
 	)
+	React.useEffect(() => {
+		if (windowDimension.windowWidth < THEME.screenSize.mobile) {
+			setStatement(
+				<>
+					Uma lente focada <br />
+					na demanda específica <br />
+					e outra com vista <br />
+					panorâmica do lugar, <br />
+					do contexto e da <br />
+					atualidade.
+				</>
+			)
+		} else {
+			setStatement(
+				<>
+					Uma lente focada na demanda <br />
+					específica e outra com vista <br />
+					panorâmica do lugar, do contexto <br />e da atualidade.
+				</>
+			)
+		}
+	}, [windowDimension])
+
 	return (
 		<S.Wrapper ref={ref}>
-			<S.StatementDiv>
-				<Statement>Prática criativa comprometida com o contexto.</Statement>
-			</S.StatementDiv>
 			<S.Content>
 				<S.ImagesWrapper>
 					<NextImage
@@ -61,25 +85,24 @@ const PhilosophySection = React.forwardRef<HTMLDivElement>((props, ref) => {
 					<br />
 					<br />
 					<p>
-						Nossos projetos, de diferentes escalas e categorias, são sempre
-						desenvolvidos a partir do entedimento profundo das demandas de cada
-						cliente e do local em torno de cada demanda. Dessa forma, geramos
-						impacto positivo para nossos clientes e para o mundo, criando
-						conexões entre pessoas, lugares, cidade e natureza.
+						Para nós, a arquitetura e o design de qualidade são capazes de
+						acolher e melhorar a vida, potencializando experiências cotidianas.
+						Por isso, focamos no bem-estar das pessoas, na harmonia das soluções
+						e na transparência das decisões.
 					</p>
 					<br />
 					<p>
-						Para nós, a boa arquitetura é capaz de acolher e melhorar a vida
-						cotidiana. Focamos no bem estar das pessoas, na harmonia das
-						construções com o contexto e na transparência das decisões.
+						Nossos projetos, de diferentes tipos e tamanhos, são sempre
+						desenvolvidos a partir do olhar atento às demandas de cada cliente e
+						ao seu contexto específico. Desenvolvemos propostas autênticas,
+						atemporais e descomplicadas que possam ser vivenciadas em sua
+						plenitude. Assim geramos impacto positivo para nossos clientes e
+						para o mundo, criando conexões entre pessoas e lugares.
 					</p>
 				</S.ParagraphWrapper>
 			</S.Content>
 			<S.StatementDiv>
-				<Statement>
-					Uma lente focada na demanda específica e outra com vista panorâmica do
-					lugar, do contexto e da atualidade.
-				</Statement>
+				<Statement>{statement}</Statement>
 			</S.StatementDiv>
 		</S.Wrapper>
 	)

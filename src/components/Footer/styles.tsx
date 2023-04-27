@@ -3,74 +3,65 @@ import THEME from '@/styles/theme'
 
 export const Wrapper = styled.div`
 	position: relative;
-	color: ${THEME.colors.secondaryColor};
-	margin-top: 200px;
+	color: ${THEME.colors.primaryColor};
+	margin-top: 100px;
 	border: none;
-	height: 250px;
-	width: 100%;
-	background-color: ${THEME.colors.primaryColor};
-	@media (max-width: ${THEME.screenSize.tablet}px) {
-		height: auto;
-	}
-`
-
-export const SignatureWrapper = styled.div`
-	font-size: ${THEME.fontSize.smallText}px;
-	border: none;
-	border-top: 1px solid ${THEME.colors.darkGrey};
-	height: 64px;
-	padding: 8px;
-	width: 100%;
-	position: absolute;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	bottom: 0;
-	@media (max-width: ${THEME.screenSize.tablet}px) {
-		flex-direction: column;
-	}
-`
-export const ContentWrapper = styled.div`
-	height: 186px;
-	width: 100%;
-	gap: 0;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	flex-direction: row;
-	padding-right: 60px;
-	padding-left: 60px;
-	@media (max-width: ${THEME.screenSize.tablet}px) {
-		height: 435px;
-		align-items: center;
-		justify-content: flex-start;
-		flex-direction: column;
-	}
-`
-
-export const CenterElement = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	text-align: center;
-	margin: 20px;
-	width: 33.3333%;
+	width: 100%;
+`
+export const UpperContent = styled.div`
+	margin-bottom: 40px;
+	min-height: 80px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	@media (max-width: ${THEME.screenSize.mobile}px) {
+		margin-bottom: 0;
+	}
+`
+
+export const MiddleContent = styled.div`
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+	@media (max-width: ${THEME.screenSize.mobile}px) {
+		align-items: center;
+		justify-content: flex-start;
+		flex-direction: column;
+		gap: 20px;
+	}
+`
+export const ContentWrapper = styled.div`
+	width: 75%;
+	gap: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
 	@media (max-width: ${THEME.screenSize.tablet}px) {
-		height: 80px;
+		width: 66%;
+	}
+	@media (max-width: ${THEME.screenSize.mobile}px) {
+		width: 75%;
 	}
 `
 
 export const LeftElement = styled.div`
 	display: flex;
-	align-items: center;
-	justify-content: left;
-	margin: 20px;
-	width: 33.3333%;
-	@media (max-width: ${THEME.screenSize.tablet}px) {
+	align-items: flex-start;
+	flex-direction: column;
+	justify-content: center;
+	text-align: left;
+	width: 50%;
+	@media (max-width: ${THEME.screenSize.mobile}px) {
 		justify-content: center;
+		align-items: center;
+		text-align: center;
 		height: 80px;
 	}
 `
@@ -80,23 +71,38 @@ export const RightElement = styled.div`
 	align-items: center;
 	justify-content: right;
 	text-align: right;
-	margin: 20px;
-	width: 33.3333%;
-	@media (max-width: ${THEME.screenSize.tablet}px) {
+	width: 50%;
+	@media (max-width: ${THEME.screenSize.mobile}px) {
 		justify-content: center;
+		align-items: center;
 		height: 80px;
 		width: 100%;
 	}
 `
 
 export const IconDiv = styled.span`
-	display: flex;
-	flex-direction: row;
+	display: inline-block;
+	vertical-align: middle;
 	gap: 4px;
 	margin-left: 4px;
 	> svg {
 		&:hover {
 			color: ${THEME.colors.accentColor};
 		}
+	}
+`
+export const SignatureWrapper = styled.div`
+	border: none;
+	color: ${THEME.colors.lightGrey};
+	padding: 8px;
+	width: 100%;
+	margin-bottom: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	> p {
+		font-size: ${THEME.fontSize.smallerText}px;
 	}
 `

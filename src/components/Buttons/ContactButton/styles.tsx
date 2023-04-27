@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import THEME from '@/styles/theme'
 
 export const Button = styled.div`
-	background-color: ${THEME.colors.secondaryColor};
 	color: ${THEME.colors.primaryColor};
 	border: 1px solid ${THEME.colors.accentColor};
 	font-size: ${THEME.fontSize.buttons}px;
@@ -14,10 +13,16 @@ export const Button = styled.div`
 	justify-content: center;
 	align-items: center;
 	-webkit-tap-highlight-color: transparent;
-	transition: background-color 0.3s ease, color 0.3s ease;
+	background-image: linear-gradient(
+		${THEME.colors.accentColor},
+		${THEME.colors.accentColor}
+	);
+	background-size: 0 100%;
+	background-repeat: no-repeat;
+	transition: 0.6s;
 	&:hover {
+		background-size: 100% 100%;
 		color: ${THEME.colors.secondaryColor};
-		background-color: ${THEME.colors.accentColor};
 	}
 	max-width: 200px;
 `

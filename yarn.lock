@@ -1680,10 +1680,10 @@
   dependencies:
     glob "7.1.7"
 
-"@next/font@13.1.6", "@next/font@^13.0.7":
-  version "13.1.6"
-  resolved "https://registry.yarnpkg.com/@next/font/-/font-13.1.6.tgz#2bf99e3321ec9b4d65781c0d0ebff072e8752e1a"
-  integrity sha512-AITjmeb1RgX1HKMCiA39ztx2mxeAyxl4ljv2UoSBUGAbFFMg8MO7YAvjHCgFhD39hL7YTbFjol04e/BPBH5RzQ==
+"@next/font@13.3.1", "@next/font@^13.0.7":
+  version "13.3.1"
+  resolved "https://registry.yarnpkg.com/@next/font/-/font-13.3.1.tgz#0eebafea1fbb565abf45fb3b9fbc61df6d7ed391"
+  integrity sha512-S8Shizt4xlHDItXTAowEoyktiaLIEzTxJeXPaRu+VDeb21yXu7kMX2DUQE5Un+kb/ViCaAdWlyltCuS2sywEjA==
 
 "@next/swc-android-arm-eabi@13.1.6":
   version "13.1.6"
@@ -3446,6 +3446,13 @@
   version "1.8.6"
   resolved "https://registry.yarnpkg.com/@types/react-scroll/-/react-scroll-1.8.6.tgz#a2b1ea795279548172cd9a2c99fa4e5568297ffb"
   integrity sha512-aMTiNgcmA7dwn1yjoHsiL78RfRnKCXzFyMbv63VrZTXloSfNePBdKtVObC3/My6irwDf0Oz0U4VjEC/vrv6/9w==
+  dependencies:
+    "@types/react" "*"
+
+"@types/react-textfit@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@types/react-textfit/-/react-textfit-1.1.0.tgz#81a6564c17d555b20c91e28547241fd21930df50"
+  integrity sha512-iF49wuf4TMUKxcQjKyZcaJRN8rKFrXUBIAo0KQ0O/orHLQpwCyxpiD8NlPRqmcRN3FOAxSiRAOENbEQF1bhqiQ==
   dependencies:
     "@types/react" "*"
 
@@ -10070,6 +10077,14 @@ react-scroll@^1.8.9:
   integrity sha512-9m7ztraiX/l6L7erzYAD3fhnveNckei6/NkWfqwN2e0FRdoE2W6Pk4oi2Nah7mWpPCPAeIgegfaqZACTimPOwg==
   dependencies:
     lodash.throttle "^4.1.1"
+    prop-types "^15.7.2"
+
+react-textfit@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-textfit/-/react-textfit-1.1.1.tgz#cce3d974c69b8b4222cfae78200abc366f74d050"
+  integrity sha512-UDSQRo5yBEGueLTE5SgNV9fSmr5CWJkE0E0R0YbcbCO69iuJGfcT6wspKhX2sIwdsDyT9qXOwMC80cnRolir7Q==
+  dependencies:
+    process "^0.11.10"
     prop-types "^15.7.2"
 
 react@18.2.0:
