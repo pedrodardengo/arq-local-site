@@ -34,7 +34,7 @@ const ContactUsSection = React.forwardRef<HTMLDivElement>((props, ref) => {
 				<Statement>{statement}</Statement>
 			</S.StatementDiv>
 
-			<S.Content>
+			<S.Content id={'contactUsSection'}>
 				<h2>Vamos juntos realizar o seu projeto?</h2>
 				<ContactButton>Fale com a gente!</ContactButton>
 				<div style={{ width: '100%' }}>

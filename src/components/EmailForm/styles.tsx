@@ -21,7 +21,7 @@ export const Input = styled.input`
 	border-bottom: 1px solid ${THEME.colors.primaryColor};
 	color: ${THEME.colors.primaryColor};
 	font-family: ${THEME.fonts.primaryFont};
-
+	-webkit-appearance: none;
 	&:focus {
 		outline-width: 0;
 	}
@@ -44,6 +44,7 @@ export const TextArea = styled.textarea`
 	font-size: ${THEME.fontSize.textDesktop}px;
 	font-family: ${THEME.fonts.primaryFont};
 	-webkit-rtl-ordering: logical;
+	-webkit-appearance: none;
 	text-indent: 0;
 	&:focus {
 		outline-width: 0;

@@ -11,13 +11,25 @@ import img08 from '../../../public/img/08.jpg'
 import img09 from '../../../public/img/09.png'
 import img10 from '../../../public/img/10.png'
 import img11 from '../../../public/img/11.png'
+import { useRouter } from 'next/router'
 
 const ProjectsSection = React.forwardRef<HTMLDivElement>((props, ref) => {
 	const quality = 30
+	const router = useRouter()
+
+	const handleButtonClick = () => {
+		router.push('/projects')
+	}
+
 	return (
-		<S.Wrapper ref={ref}>
+		<S.Wrapper ref={ref} id={'projectsSection'}>
 			<ProjectsGrid>
-				<NextImage src={img08} alt={'casa local 8'} quality={quality} />
+				<NextImage
+					src={img08}
+					alt={'casa local 8'}
+					quality={quality}
+					onClick={handleButtonClick}
+				/>
 				<NextImage src={img01} alt={'casa local 3'} quality={quality} />
 				<NextImage src={img02} alt={'casa local 4'} quality={quality} />
 				<NextImage src={img04} alt={'casa local 5'} quality={quality} />

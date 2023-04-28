@@ -2,28 +2,35 @@ import React from 'react'
 import throttle from 'lodash.throttle'
 
 export default function useOnMiddleOfScreen(
-	ref: React.RefObject<any>,
+	ref: string | React.RefObject<any>,
 	throttleMilliseconds = 100
 ): boolean {
 	const [isVisible, setIsVisible] = React.useState(false)
 
-	const onScroll = throttle(() => {
-		if (!ref.current) {
-			setIsVisible(false)
-			return
-		}
-		const rect = ref.current.getBoundingClientRect()
-		const windowHeight = window.innerHeight
-		const linePosition = windowHeight / 4
-		const isLineBelowTop = linePosition >= rect.top
-		const isLineAboveBottom = linePosition <= rect.bottom
-		setIsVisible(isLineBelowTop && isLineAboveBottom)
-	}, throttleMilliseconds)
-
 	React.useEffect(() => {
-		document.addEventListener('scroll', onScroll, true)
-		return () => document.removeEventListener('scroll', onScroll, true)
-	})
+		let objectRef: HTMLElement | null = null
+		if (typeof ref === 'string') {
+			objectRef = document.getElementById(ref)
+		} else if (typeof ref === 'object' && 'current' in ref) {
+			objectRef = ref.current
+		}
+		const onScroll = throttle(() => {
+			if (!objectRef) {
+				setIsVisible(false)
+				return
+			}
+			const rect = objectRef.getBoundingClientRect()
+			const windowHeight = window.innerHeight
+			const linePosition = windowHeight / 4
+			const isLineBelowTop = linePosition >= rect.top
+			const isLineAboveBottom = linePosition <= rect.bottom
+			setIsVisible(isLineBelowTop && isLineAboveBottom)
+		}, throttleMilliseconds)
+		if (window) {
+			document.addEventListener('scroll', onScroll, true)
+			return () => document.removeEventListener('scroll', onScroll, true)
+		}
+	}, [ref, throttleMilliseconds])
 
 	return isVisible
 }

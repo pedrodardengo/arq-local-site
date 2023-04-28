@@ -7,18 +7,10 @@ import NavBarButton from '@/components/Buttons/NavBarButton'
 
 export const DropDownBurgerButton = ({
 	style,
-	projectsRef,
-	aboutUsRef,
-	contactUsRef,
-	researchRef,
 	iconColor = THEME.colors.primaryColor,
 	iconSize = 35
 }: {
 	style?: React.CSSProperties
-	projectsRef: React.RefObject<any>
-	aboutUsRef: React.RefObject<any>
-	contactUsRef: React.RefObject<any>
-	researchRef: React.RefObject<any>
 	iconColor?: string
 	iconSize?: number
 }) => {
@@ -66,8 +58,8 @@ export const DropDownBurgerButton = ({
 
 	return (
 		<div style={{ ...style, position: 'relative' }} ref={dropdownRef}>
-			<S.BurgerIconWrapper onClick={OnClickHandler} textColor={elementsColor}>
-				<RxHamburgerMenu size={iconSize} color={iconColor} />
+			<S.BurgerIconWrapper onClick={OnClickHandler} iconColor={iconColor}>
+				<RxHamburgerMenu size={iconSize} />
 			</S.BurgerIconWrapper>
 			<DropdownMenu
 				isOpen={isMenuOpen}
@@ -80,22 +72,22 @@ export const DropDownBurgerButton = ({
 			>
 				<NavBarButton
 					textColor={elementsColor}
-					sectionRef={projectsRef}
+					sectionRef={'projectsSection'}
 					scrollOffset={-120}
 				>
 					PROJETOS
 				</NavBarButton>
 				<NavBarButton
 					textColor={elementsColor}
-					sectionRef={researchRef}
+					sectionRef={'researchSection'}
 					scrollOffset={-120}
 				>
 					PESQUISA
 				</NavBarButton>
-				<NavBarButton textColor={elementsColor} sectionRef={aboutUsRef}>
+				<NavBarButton textColor={elementsColor} sectionRef={'aboutUsSection'}>
 					SOBRE
 				</NavBarButton>
-				<NavBarButton textColor={elementsColor} sectionRef={contactUsRef}>
+				<NavBarButton textColor={elementsColor} sectionRef={'contactUsSection'}>
 					CONTATO
 				</NavBarButton>
 			</DropdownMenu>

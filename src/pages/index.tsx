@@ -1,5 +1,5 @@
 import HeroSection from '@/sections/HeroSection'
-import NavBar from '@/components/NavBar'
+import HeroSectionNavBar from 'src/components/HeroSectionNavBar'
 import React from 'react'
 import * as S from '@/sections/styles'
 import LoadingScreen from '@/components/LoadingScreen'
@@ -15,28 +15,19 @@ import StatementSection2 from '@/sections/StatementSection2'
 
 export default function Home() {
 	useBeforeRefresh(scrollToStart)
-	const projectsRef = React.useRef(null)
-	const aboutUsRef = React.useRef(null)
-	const contactUsRef = React.useRef(null)
-	const researchRef = React.useRef(null)
 	const heroSectionRef = React.useRef(null)
 	return (
 		<>
 			<LoadingScreen toWaitLoad={heroSectionRef} />
 			<HeroSection ref={heroSectionRef} />
-			<NavBar
-				projectsRef={projectsRef}
-				aboutUsRef={aboutUsRef}
-				contactUsRef={contactUsRef}
-				researchRef={researchRef}
-			/>
+			<HeroSectionNavBar />
 			<S.SectionsContentWrapper>
 				<StatementSection />
-				<ProjectsSection ref={projectsRef} />
-				<ResearchSection ref={researchRef} />
+				<ProjectsSection />
+				<ResearchSection />
 				<StatementSection2 />
-				<AboutUsSection ref={aboutUsRef} />
-				<ContactUsSection ref={contactUsRef} />
+				<AboutUsSection />
+				<ContactUsSection />
 				<Footer />
 			</S.SectionsContentWrapper>
 		</>

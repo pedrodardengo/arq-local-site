@@ -8,7 +8,7 @@ import ClientsSection from '@/sections/AboutUsSection/ClientsSection'
 
 const AboutUsSection = React.forwardRef<HTMLDivElement>((props, ref) => {
 	return (
-		<S.Wrapper ref={ref}>
+		<S.Wrapper ref={ref} id={'aboutUsSection'}>
 			<PhilosophySection />
 			<TeamSection />
 			<OurJobSection />

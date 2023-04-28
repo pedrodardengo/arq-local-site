@@ -6,7 +6,7 @@ import { scrollToRef } from '@/utils/scrollToRef'
 
 export type NavBarButtonProps = {
 	textColor?: string
-	sectionRef: React.RefObject<HTMLDivElement>
+	sectionRef: string | React.RefObject<HTMLDivElement>
 	addUnderLineIfOnSection?: boolean
 	scrollOffset?: number
 	children?: React.ReactNode | React.ReactNode[]

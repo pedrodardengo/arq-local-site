@@ -2,17 +2,24 @@ import React from 'react'
 import throttle from 'lodash.throttle'
 
 export default function useOnScreen(
-	ref: React.RefObject<any>,
+	ref: string | React.RefObject<any>,
 	throttleMilliseconds = 100
 ): boolean {
+	let objectRef!: HTMLElement
+	if (typeof ref === 'string') {
+		console.log('')
+		objectRef = document.getElementById(ref as string) as HTMLElement
+	} else if (typeof ref === 'object' && 'current' in ref) {
+		objectRef = ref.current as HTMLElement
+	}
 	const [isVisible, setIsVisible] = React.useState(false)
 
 	const onScroll = throttle(() => {
-		if (!ref.current) {
+		if (!objectRef) {
 			setIsVisible(false)
 			return
 		}
-		const rect = ref.current.getBoundingClientRect()
+		const rect = objectRef.getBoundingClientRect()
 		const isTopVisible = rect.top >= 0 && rect.top <= window.innerHeight
 		const isBottomVisible =
 			rect.bottom >= 0 && rect.bottom <= window.innerHeight
