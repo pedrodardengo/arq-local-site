@@ -5,12 +5,11 @@ export const Button = styled.div`
 	color: ${THEME.colors.primaryColor};
 	border: 1px solid ${THEME.colors.accentColor};
 	font-size: ${THEME.fontSize.buttons}px;
-	padding: 8px;
+	padding: 12px 15px 12px 15px;
 	cursor: pointer;
 	display: flex;
 	flex-direction: row;
 	gap: 20px;
-	justify-content: center;
 	align-items: center;
 	-webkit-tap-highlight-color: transparent;
 	background-image: linear-gradient(
@@ -24,5 +23,6 @@ export const Button = styled.div`
 		background-size: 100% 100%;
 		color: ${THEME.colors.secondaryColor};
 	}
-	max-width: 200px;
+	border-radius: 5px;
+	max-width: 205px;
 `

@@ -42,7 +42,7 @@ const OurJobSection = () => {
 						</p>
 					</S.JobDescription>
 				</S.JobContent>
-				<ContactButton>Quero Meu Projeto</ContactButton>
+				<ContactButton>Quero meu projeto</ContactButton>
 			</S.Content>
 		</S.Wrapper>
 	)

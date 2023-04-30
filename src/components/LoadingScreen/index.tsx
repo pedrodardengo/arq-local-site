@@ -3,7 +3,6 @@ import * as S from './styles'
 import LoadingBar from '@/components/LoadingBar'
 import { useOnInterval } from '@/utils/useOnInterval'
 import NextImage from 'next/image'
-
 const LoadingScreen = ({
 	toWaitLoad
 }: {
@@ -11,7 +10,6 @@ const LoadingScreen = ({
 }) => {
 	const [loaded, setLoaded] = useState(false)
 	const [progress, setProgress] = useState(0)
-
 	function updateProgress() {
 		if (loaded) return
 		document.body.style.overflowY = progress < 100 ? 'hidden' : ''
@@ -28,6 +26,9 @@ const LoadingScreen = ({
 			const imagesLoadingProgress = Math.floor((loadedImages / numImages) * 100)
 			if (imagesLoadingProgress >= progress + 10) {
 				setProgress(progress + 10)
+			}
+			if (imagesLoadingProgress >= 100) {
+				setProgress(100)
 			}
 			if (progress >= 100) {
 				setLoaded(true)

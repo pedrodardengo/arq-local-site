@@ -59,7 +59,7 @@ export const AlertMessage = styled.span`
 
 export const Button = styled.button`
 	margin-top: 2px;
-	padding: 8px;
+	padding: 12px 15px 12px 15px;
 	width: 100%;
 	display: flex;
 	justify-content: left;
@@ -78,6 +78,7 @@ export const Button = styled.button`
 	font-size: ${THEME.fontSize.textDesktop}px;
 	font-family: ${THEME.fonts.primaryFont};
 	cursor: pointer;
+	border-radius: 5px;
 
 	&:hover {
 		background-size: 100% 100%;

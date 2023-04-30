@@ -1,13 +1,12 @@
 import React from 'react'
-import { useRouter } from 'next/router'
+import NavBar from '@/components/NavBar'
 
 const ProjectPage = () => {
-	const router = useRouter()
-	const onClickHandler = () => {
-		router.push('/#projectsSection')
-	}
-
-	return <div></div>
+	return (
+		<div>
+			<NavBar />
+		</div>
+	)
 }
 
 export default ProjectPage

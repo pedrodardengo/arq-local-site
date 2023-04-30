@@ -28,7 +28,7 @@ const Footer = () => {
 		} else {
 			setSignature(
 				<>
-					Todos os direitos reservados. © 2023 Arquitetura Local. Desenvolvido
+					© 2023 Arquitetura Local. Todos os direitos reservados. Desenvolvido
 					por Pedro Dardengo.
 				</>
 			)

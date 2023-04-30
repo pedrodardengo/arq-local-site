@@ -2,31 +2,36 @@ import * as S from './styles'
 import THEME from '@/styles/theme'
 import React from 'react'
 import useOnMiddleOfScreen from '@/utils/useOnMiddleOfScreen'
+import { useRouter } from 'next/router'
 import { scrollToRef } from '@/utils/scrollToRef'
 
 export type NavBarButtonProps = {
 	textColor?: string
 	sectionRef: string | React.RefObject<HTMLDivElement>
 	addUnderLineIfOnSection?: boolean
-	scrollOffset?: number
 	children?: React.ReactNode | React.ReactNode[]
 	style?: React.CSSProperties
 }
 
 const NavBarButton = ({
 	textColor = THEME.colors.primaryColor,
-	sectionRef,
 	addUnderLineIfOnSection = false,
-	scrollOffset = 0,
+	sectionRef,
 	children,
 	style
 }: NavBarButtonProps) => {
 	const isOnSection = useOnMiddleOfScreen(sectionRef)
+	const router = useRouter()
+	const isOnHomePage = router.pathname === '/'
+	const onClickHandler = isOnHomePage
+		? () => scrollToRef(sectionRef)
+		: () => router.push(`/#${sectionRef}`)
+
 	return (
 		<S.Wrapper
 			textColor={textColor}
 			underline={addUnderLineIfOnSection && isOnSection}
-			onClick={() => scrollToRef(sectionRef, scrollOffset)}
+			onClick={onClickHandler}
 			style={style}
 		>
 			{children}

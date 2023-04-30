@@ -36,14 +36,33 @@ export const UpperContent = styled.div`
 `
 
 export const CenterContent = styled.div`
+	position: relative;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	width: 100%;
+	padding-top: 20px;
+	::before {
+		content: '';
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 134%;
+		top: -1px; /* Set to negative value to position the pseudo-element above the div */
+		height: 1px; /* Set the height of the pseudo-element to create the border */
+		background-image: linear-gradient(
+			to right,
+			#ffffff 0%,
+			#dddddd 20%,
+			#cccccc 50%,
+			#dddddd 80%,
+			#ffffff 100%
+		);
+	}
 	@media (max-width: ${THEME.screenSize.mobile}px) {
 		align-items: center;
 		justify-content: flex-start;
-		flex-direction: column;
+		flex-direction: column-reverse;
 		gap: 20px;
 		margin-top: 20px;
 	}

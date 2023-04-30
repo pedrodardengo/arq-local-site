@@ -14,30 +14,10 @@ const NavBar = () => {
 
 	const navBarButtons = (
 		<>
-			<NavBarButton
-				sectionRef={'projectsSection'}
-				addUnderLineIfOnSection={true}
-			>
-				PROJETOS
-			</NavBarButton>
-			<NavBarButton
-				sectionRef={'researchSection'}
-				addUnderLineIfOnSection={true}
-			>
-				PESQUISA
-			</NavBarButton>
-			<NavBarButton
-				sectionRef={'aboutUsSection'}
-				addUnderLineIfOnSection={true}
-			>
-				SOBRE
-			</NavBarButton>
-			<NavBarButton
-				sectionRef={'contactUsSection'}
-				addUnderLineIfOnSection={true}
-			>
-				CONTATO
-			</NavBarButton>
+			<NavBarButton sectionRef={'projectsSection'}>PROJETOS</NavBarButton>
+			<NavBarButton sectionRef={'researchSection'}>PESQUISA</NavBarButton>
+			<NavBarButton sectionRef={'aboutUsSection'}>SOBRE</NavBarButton>
+			<NavBarButton sectionRef={'contactUsSection'}>CONTATO</NavBarButton>
 		</>
 	)
 
