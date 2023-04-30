@@ -33,7 +33,8 @@ const ProjectsSection = React.forwardRef<HTMLDivElement>((props, ref) => {
 							key={index}
 							src={projectObject.thumbnail.url}
 							alt={projectObject.thumbnail.alt}
-							fill={true}
+							height={300}
+							width={300}
 							quality={20}
 							onClick={handleButtonClick}
 						/>

@@ -29,7 +29,8 @@ const HeroSection = React.forwardRef<HTMLDivElement>((props, ref) => {
 							key={index}
 							src={slideImage.url}
 							alt={slideImage.alt}
-							fill={true}
+							height={1080}
+							width={1920}
 							quality={80}
 						/>
 					)
