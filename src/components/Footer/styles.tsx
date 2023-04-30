@@ -48,8 +48,8 @@ export const CenterContent = styled.div`
 		left: 50%;
 		transform: translateX(-50%);
 		width: 134%;
-		top: -1px; /* Set to negative value to position the pseudo-element above the div */
-		height: 1px; /* Set the height of the pseudo-element to create the border */
+		top: -1px;
+		height: 1px;
 		background-image: linear-gradient(
 			to right,
 			#ffffff 0%,

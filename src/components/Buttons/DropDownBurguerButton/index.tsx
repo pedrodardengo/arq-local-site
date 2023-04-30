@@ -70,18 +70,10 @@ export const DropDownBurgerButton = ({
 						: THEME.colors.faintGrey
 				}
 			>
-				<NavBarButton
-					textColor={elementsColor}
-					sectionRef={'projectsSection'}
-					scrollOffset={-120}
-				>
+				<NavBarButton textColor={elementsColor} sectionRef={'projectsSection'}>
 					PROJETOS
 				</NavBarButton>
-				<NavBarButton
-					textColor={elementsColor}
-					sectionRef={'researchSection'}
-					scrollOffset={-120}
-				>
+				<NavBarButton textColor={elementsColor} sectionRef={'researchSection'}>
 					PESQUISA
 				</NavBarButton>
 				<NavBarButton textColor={elementsColor} sectionRef={'aboutUsSection'}>
