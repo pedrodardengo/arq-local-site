@@ -2,14 +2,11 @@ import SlideShow from '@/components/SlideShow'
 import React from 'react'
 import * as S from './styles'
 import axios from 'axios'
-
-type SlideImage = {
-	url: string
-	alt: string
-}
+import { ImageDTO } from '@/types/ImageDTO'
+import NextImage from 'next/image'
 
 const HeroSection = React.forwardRef<HTMLDivElement>((props, ref) => {
-	const [slideImages, setSlideImages] = React.useState<SlideImage[]>([])
+	const [slideImages, setSlideImages] = React.useState<ImageDTO[]>([])
 
 	const getSlideImages = () => {
 		axios
@@ -27,7 +24,15 @@ const HeroSection = React.forwardRef<HTMLDivElement>((props, ref) => {
 		<S.Wrapper ref={ref}>
 			<SlideShow>
 				{slideImages.map((slideImage, index) => {
-					return <img key={index} src={slideImage.url} alt={slideImage.alt} />
+					return (
+						<NextImage
+							key={index}
+							src={slideImage.url}
+							alt={slideImage.alt}
+							fill={true}
+							quality={80}
+						/>
+					)
 				})}
 			</SlideShow>
 		</S.Wrapper>

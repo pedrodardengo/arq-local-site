@@ -2,13 +2,11 @@ import React from 'react'
 import * as S from './styles'
 import Slider from '@/components/Slider'
 import axios from 'axios'
+import { ImageDTO } from '@/types/ImageDTO'
+import NextImage from 'next/image'
 
-type LogoImage = {
-	url: string
-	alt: string
-}
 const ClientsSection = () => {
-	const [clientLogos, setClientLogos] = React.useState<LogoImage[]>([
+	const [clientLogos, setClientLogos] = React.useState<ImageDTO[]>([
 		{
 			url: 'img/al-logo-5.svg',
 			alt: ''
@@ -34,7 +32,16 @@ const ClientsSection = () => {
 			</S.TitleDiv>
 			<Slider>
 				{clientLogos.map((logoImage, index) => {
-					return <img key={index} src={logoImage.url} alt={logoImage.alt} />
+					return (
+						<NextImage
+							key={index}
+							src={logoImage.url}
+							alt={logoImage.alt}
+							width={200}
+							height={100}
+							quality={20}
+						/>
+					)
 				})}
 			</Slider>
 		</S.Wrapper>
