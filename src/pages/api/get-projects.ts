@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import * as prismic from '@prismicio/client'
-import { ProjectDTO } from '@/types/projectDTO'
+import { ProjectDTO } from '@/types/ProjectDTO'
 
 export default async function handler(
 	req: NextApiRequest,

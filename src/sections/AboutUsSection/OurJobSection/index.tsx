@@ -1,48 +1,44 @@
 import React from 'react'
 import * as S from './styles'
-import THEME from '@/styles/theme'
-import ContactButton from '@/components/Buttons/ContactButton'
+import axios from 'axios'
+import { TextDTO } from '@/types/TextDTO'
 
 const OurJobSection = () => {
+	const [panelsTexts, setPanelsTexts] = React.useState<TextDTO[]>([])
+
+	const getPanelsTexts = () => {
+		axios.get('/api/get-our-job-texts').then(function (response) {
+			setPanelsTexts(response.data)
+		})
+	}
+
+	React.useEffect(() => {
+		getPanelsTexts()
+	}, [])
+
 	return (
 		<S.Wrapper>
 			<S.Content>
-				<S.TitleWrapper>
-					<p>/ o que fazemos</p>
-					<br />
-					<br />
-					<h2>
-						Somos um estúdio de arquitetura e design. Sempre que possível,
-						unimos as duas áreas para potencializar os resultados.
-					</h2>
-				</S.TitleWrapper>
-				<S.JobContent>
-					<S.JobHeader>
-						<p style={{ fontWeight: THEME.fontWeight.semiBold }}>Arquitetura</p>
-					</S.JobHeader>
-					<S.JobDescription>
-						<p>
-							Espaços para serem vivenciados em sua plenitude. Projetos
-							arquitetônicos completos, da concepção ao executivo. Residencial,
-							comercial, corporativo, cultural e urbano. Para construções novas,
-							reformas totais ou interiores.
-						</p>
-					</S.JobDescription>
-				</S.JobContent>
-				<S.JobContent>
-					<S.JobHeader>
-						<p style={{ fontWeight: THEME.fontWeight.semiBold }}>Design</p>
-					</S.JobHeader>
-					<S.JobDescription>
-						<p>
-							Produtos especiais com identidade e propósito. Projetos de design
-							para a expressão visual de negócios ou espaços, da concepção à
-							implementação. Publicidade para empreendimentos imobiliários,
-							naming, branding, editorial e comunicação visual.
-						</p>
-					</S.JobDescription>
-				</S.JobContent>
-				<ContactButton>Quero meu projeto</ContactButton>
+				<h2>
+					Pensamos a arquitetura e o design como ferramentas para potencializar
+					experiências cotidianas, de acolher e melhorar a vida.
+				</h2>
+
+				<S.PanelsDiv>
+					{panelsTexts.map((panelsText, index) => {
+						return (
+							<S.PanelDiv key={index}>
+								<p>{panelsText.title}</p>
+								<br />
+								<p>{panelsText.text}</p>
+							</S.PanelDiv>
+						)
+					})}
+				</S.PanelsDiv>
+				<h2>
+					Sempre que possível, em um mesmo projeto unimos as duas áreas para
+					fortalecer os resultados.
+				</h2>
 			</S.Content>
 		</S.Wrapper>
 	)

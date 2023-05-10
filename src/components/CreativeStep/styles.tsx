@@ -24,9 +24,7 @@ export const TitleSpan = styled.div`
 	font-weight: ${THEME.fontWeight.semiBold};
 `
 
-export const ImageDiv = styled.div<{
-	descMinHeight: number
-}>`
+export const ImageDiv = styled.div`
 	position: relative;
 	display: flex;
 	clip-path: polygon(0 0, 100% 0, 100% 1000%, 0 1000%);
@@ -58,7 +56,7 @@ export const ImageDiv = styled.div<{
 		background-color: ${THEME.colors.accentColor};
 		color: ${THEME.colors.secondaryColor};
 		padding: 25px;
-		min-height: ${(props) => props.descMinHeight}px;
+		min-height: 100%;
 		width: 100%;
 		bottom: 101%;
 		pointer-events: none;

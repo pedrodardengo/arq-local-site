@@ -1,15 +1,15 @@
 import React from 'react'
 import * as S from './styles'
 import ProjectsGrid from '@/components/ProjectsGrid'
-import NextImage from 'next/image'
 import { useRouter } from 'next/router'
 import axios from 'axios'
-import { ProjectDTO } from '@/types/projectDTO'
+import { ProjectDTO } from '@/types/ProjectDTO'
+import Title from '@/components/Title'
 
 const ProjectsSection = React.forwardRef<HTMLDivElement>((props, ref) => {
 	const router = useRouter()
 	const handleButtonClick = () => {
-		router.push('/projects')
+		router.push('/projetos')
 	}
 
 	const [projectObjects, setProjectObjects] = React.useState<ProjectDTO[]>([])
@@ -26,16 +26,14 @@ const ProjectsSection = React.forwardRef<HTMLDivElement>((props, ref) => {
 
 	return (
 		<S.Wrapper ref={ref} id={'projectsSection'}>
+			<Title>PROJETOS</Title>
 			<ProjectsGrid>
 				{projectObjects.map((projectObject, index) => {
 					return (
-						<NextImage
+						<img
 							key={index}
 							src={projectObject.thumbnail.url}
 							alt={projectObject.thumbnail.alt}
-							height={300}
-							width={300}
-							quality={20}
 							onClick={handleButtonClick}
 						/>
 					)

@@ -1,49 +1,31 @@
 import React from 'react'
 import * as S from './styles'
 import EmailForm from '@/components/EmailForm'
-import Statement from '@/components/Statement'
 import ContactButton from '@/components/Buttons/ContactButton'
-import { useWindowDimensions } from '@/utils/useWindowDimensions'
-import THEME from '@/styles/theme'
-
+import Title from '@/components/Title'
 const ContactUsSection = React.forwardRef<HTMLDivElement>((props, ref) => {
-	const [statement, setStatement] = React.useState(<></>)
-	const windowDimension = useWindowDimensions()
-
-	React.useEffect(() => {
-		if (windowDimension.width < THEME.screenSize.mobile) {
-			setStatement(
-				<>
-					Estamos aqui para <br />
-					te ajudar aconcretizar <br />
-					uma ideia.
-				</>
-			)
-		} else {
-			setStatement(
-				<>
-					Estamos aqui para te ajudar a<br />
-					concretizar uma ideia.
-				</>
-			)
-		}
-	}, [windowDimension])
 	return (
 		<S.Wrapper ref={ref}>
-			<S.StatementDiv>
-				<Statement>{statement}</Statement>
-			</S.StatementDiv>
-
 			<S.Content id={'contactUsSection'}>
-				<h2>Vamos juntos realizar o seu projeto?</h2>
-				<ContactButton>Fale com a gente!</ContactButton>
-				<div style={{ width: '100%' }}>
-					<p style={{ marginBottom: 32 }}>
-						Se preferir, preencha os campos abaixo e entraremos em contato com
-						você.
+				<S.TextDiv>
+					<Title>VAMOS JUNTOS REALIZAR O SEU PROJETO?</Title>
+					<br />
+					<br />
+					<h2>
+						Queremos conhecer você e a sua demanda. Entre em contato e vamos dar
+						início a uma nova história.
+					</h2>
+				</S.TextDiv>
+				<ContactButton style={{ marginBottom: 128 }}>
+					Fale com a gente!
+				</ContactButton>
+				<S.EmailFormDiv>
+					<p style={{ marginBottom: 48 }}>
+						Se preferir, você pode iniciar a nossa conversa por aqui. Nos conte
+						um pouco sobre você e entraremos em contato o mais breve possível.
 					</p>
 					<EmailForm />
-				</div>
+				</S.EmailFormDiv>
 			</S.Content>
 		</S.Wrapper>
 	)

@@ -1,39 +1,30 @@
 import styled from 'styled-components'
 import THEME from '@/styles/theme'
 export const Wrapper = styled.div`
-	width: 100%;
-`
-
-export const StatementDiv = styled.div`
-	position: relative;
-	left: 12.5%;
-	width: 62.5%;
-
-	@media (max-width: ${THEME.screenSize.tablet}px) {
-		left: 16.6%;
-		width: 63.3%;
-	}
-	@media (max-width: ${THEME.screenSize.mobile}px) {
-		left: 12.5%;
-		width: 75%;
-	}
+	width: 75%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 `
 export const Content = styled.div`
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
+	align-items: center;
 	justify-content: center;
-	gap: 64px;
-	height: 100lvh;
-	left: 12.5%;
-	width: 62.5%;
+`
+
+export const TextDiv = styled.div`
+	max-width: 550px;
+	text-align: center;
+	margin-bottom: 64px;
+`
+
+export const EmailFormDiv = styled.div`
+	width: 66.6%;
+
 	@media (max-width: ${THEME.screenSize.tablet}px) {
-		left: 16.6%;
-		width: 63.3%;
-	}
-	@media (max-width: ${THEME.screenSize.mobile}px) {
-		left: 12.5%;
-		width: 75%;
+		width: 100%;
 	}
 `

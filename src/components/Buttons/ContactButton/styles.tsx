@@ -5,6 +5,7 @@ export const Button = styled.div`
 	color: ${THEME.colors.primaryColor};
 	border: 1px solid ${THEME.colors.accentColor};
 	font-size: ${THEME.fontSize.buttons}px;
+	font-weight: ${THEME.fontWeight.semiBold};
 	padding: 12px 15px 12px 15px;
 	cursor: pointer;
 	display: flex;

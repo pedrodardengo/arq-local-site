@@ -46,7 +46,7 @@ const GlobalStyles = createGlobalStyle`
         }
       }
 		h1 {
-			font-weight: ${THEME.fontWeight.medium};
+			font-weight: ${THEME.fontWeight.regular};
 			font-size: ${THEME.fontSize.title1Desktop}px;
 			font-family: ${THEME.fonts.secondaryFont};
 
@@ -60,7 +60,7 @@ const GlobalStyles = createGlobalStyle`
 		}
 
 		h2 {
-			font-weight: ${THEME.fontWeight.semiBold};
+			font-weight: ${THEME.fontWeight.regular};
 			font-size: ${THEME.fontSize.title2Desktop}px;
 
 			@media (max-width: ${THEME.screenSize.tablet}px) {

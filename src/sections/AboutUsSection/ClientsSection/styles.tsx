@@ -5,20 +5,53 @@ export const Wrapper = styled.div`
 	position: relative;
 	width: 100%;
 	display: flex;
-
+	background-color: ${THEME.colors.accentColor};
 	flex-direction: column;
 	justify-content: center;
-	gap: 50px;
+	align-items: center;
+	padding-bottom: 32px;
+`
+
+export const ContentDiv = styled.div`
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 75%;
+	gap: 32px;
+`
+
+export const TitleAndPanelsDiv = styled.div`
+	margin-top: 128px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 64px;
+	gap: 64px;
+	@media (max-width: ${THEME.screenSize.tablet}px) {
+		flex-direction: column;
+	}
 `
 
 export const TitleDiv = styled.div`
-	position: relative;
-	left: 12.5%;
+	color: ${THEME.colors.secondaryColor};
+	width: 50%;
+	@media (max-width: ${THEME.screenSize.tablet}px) {
+		width: 100%;
+	}
+`
+export const PanelsDiv = styled.div`
+	display: flex;
+	flex-direction: column;
+	gap: 64px;
+	width: 45%;
 
 	@media (max-width: ${THEME.screenSize.tablet}px) {
-		left: 16.6%;
+		width: 100%;
 	}
-	@media (max-width: ${THEME.screenSize.mobile}px) {
-		left: 12.5%;
-	}
+`
+
+export const PanelDiv = styled.div`
+	padding: 32px;
+	background-color: ${THEME.colors.secondaryColor};
 `

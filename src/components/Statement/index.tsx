@@ -29,11 +29,8 @@ const Statement = ({
 					{children}
 				</Textfit>
 			</h1>
-			<S.ChevronDiv
-				isEntireBoxVisible={isVisible}
-				onClick={scrollOneScreenHeight}
-			>
-				<RxChevronDown size={50} />
+			<S.ChevronDiv isEntireBoxVisible={isVisible}>
+				<RxChevronDown size={50} onClick={scrollOneScreenHeight} />
 			</S.ChevronDiv>
 		</S.Wrapper>
 	)

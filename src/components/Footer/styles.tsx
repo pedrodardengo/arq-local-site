@@ -4,7 +4,7 @@ import THEME from '@/styles/theme'
 export const Wrapper = styled.div`
 	position: relative;
 	color: ${THEME.colors.primaryColor};
-	margin-top: 128px;
+	margin-top: 196px;
 	border: none;
 	display: flex;
 	flex-direction: column;

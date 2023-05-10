@@ -5,15 +5,20 @@ const showText = keyframes`
 	100% { transform: translate3d(0, 0, 0); }
 `
 
-export const Wrapper = styled.div<{ isVisible: boolean }>`
+export const Wrapper = styled.div<{
+	isVisible: boolean
+}>`
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	text-align: center;
+	align-items: center;
 	height: 100lvh;
+	gap: 128px;
 	> h1 {
+		width: 100%;
 		opacity: ${(props) => (props.isVisible ? '1' : '0')};
-		max-font-size: 65px;
 		transition: opacity 1s ease-in;
 		animation: ${(props) =>
 			props.isVisible
@@ -25,20 +30,13 @@ export const Wrapper = styled.div<{ isVisible: boolean }>`
 `
 
 export const ChevronDiv = styled.div<{ isEntireBoxVisible: boolean }>`
-	position: absolute;
-	width: 60px;
-	height: 60px;
 	display: flex;
-	justify-content: center;
 	align-items: center;
-	bottom: 0;
-	left: calc(50% - 30px);
-	opacity: ${(props) => (props.isEntireBoxVisible ? '1' : '0')};
-	transition: opacity 0.5s ease;
+	justify-content: center;
+	height: 60px;
 	> svg {
-		opacity: 0.5;
-		transition: height 0.5s ease;
-		margin-bottom: 100px;
+		opacity: ${(props) => (props.isEntireBoxVisible ? '0.5' : '0')};
+		transition: all 0.5s ease;
 		&:hover {
 			height: 60px;
 			width: 60px;

@@ -1,14 +1,22 @@
 import React from 'react'
 import CreativeStep from '@/components/CreativeStep'
 import * as S from './styles'
+import Title from '@/components/Title'
 
-const CreativeStepsSection = () => {
+const OurMethodSection = () => {
 	return (
 		<S.Wrapper>
 			<S.Content>
-				<S.SectionTitleDiv>
-					<p>/ como fazemos</p>
-				</S.SectionTitleDiv>
+				<S.TitleDiv>
+					<Title>MÉTODO</Title>
+					<br />
+					<br />
+					<h2>
+						A partir do olhar atento a cada demanda e contexto específico,
+						desenvolvemos propostas autênticas, atemporais e descomplicadas que
+						possam ser vivenciadas em sua plenitude.
+					</h2>
+				</S.TitleDiv>
 				<S.StepsGrid>
 					<CreativeStep
 						stepNumber={1}
@@ -55,4 +63,4 @@ const CreativeStepsSection = () => {
 	)
 }
 
-export default CreativeStepsSection
+export default OurMethodSection

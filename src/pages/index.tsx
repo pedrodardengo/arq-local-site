@@ -12,6 +12,7 @@ import AboutUsSection from '@/sections/AboutUsSection'
 import useBeforeRefresh from '@/utils/useBeforeRefresh'
 import { scrollToStart } from '@/utils/scrollToRef'
 import StatementSection2 from '@/sections/StatementSection2'
+import StatementSection3 from '@/sections/StatementSection3'
 
 export default function Home() {
 	useBeforeRefresh(scrollToStart)
@@ -27,6 +28,7 @@ export default function Home() {
 				<ResearchSection />
 				<StatementSection2 />
 				<AboutUsSection />
+				<StatementSection3 />
 				<ContactUsSection />
 				<Footer />
 			</S.SectionsContentWrapper>

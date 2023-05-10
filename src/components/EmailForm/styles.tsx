@@ -4,7 +4,7 @@ import THEME from '@/styles/theme'
 export const FormContainer = styled.form`
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
+	align-items: center;
 	gap: 2px;
 	min-width: 120px;
 	::selection {
@@ -42,6 +42,7 @@ export const TextArea = styled.textarea`
 	resize: vertical;
 	min-height: 120px;
 	font-size: ${THEME.fontSize.textDesktop}px;
+	border-bottom: 1px solid ${THEME.colors.primaryColor};
 	font-family: ${THEME.fonts.primaryFont};
 	-webkit-rtl-ordering: logical;
 	-webkit-appearance: none;
@@ -58,30 +59,24 @@ export const AlertMessage = styled.span`
 `
 
 export const Button = styled.button`
-	margin-top: 2px;
-	padding: 12px 15px 12px 15px;
-	width: 100%;
+	margin-top: 48px;
+	padding: 8px;
+	width: auto;
 	display: flex;
-	justify-content: left;
+	justify-content: center;
 	align-items: center;
 	gap: 10px;
-	border: 1px solid ${THEME.colors.accentColor};
 	color: ${THEME.colors.primaryColor};
-	background-image: linear-gradient(
-		${THEME.colors.accentColor},
-		${THEME.colors.accentColor}
-	);
-	background-size: 0 100%;
-	background-repeat: no-repeat;
-	background-color: transparent;
-	transition: 0.6s;
+	border: none;
+	background-color: ${THEME.colors.secondaryColor};
+	border-bottom: 1px solid ${THEME.colors.primaryColor};
 	font-size: ${THEME.fontSize.textDesktop}px;
 	font-family: ${THEME.fonts.primaryFont};
 	cursor: pointer;
-	border-radius: 5px;
+	margin-bottom: 24px;
 
 	&:hover {
-		background-size: 100% 100%;
-		color: ${THEME.colors.secondaryColor};
+		color: ${THEME.colors.accentColor};
+		border-bottom: 1px solid ${THEME.colors.accentColor};
 	}
 `

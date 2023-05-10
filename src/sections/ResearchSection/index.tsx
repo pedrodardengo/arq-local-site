@@ -4,10 +4,12 @@ import ProjectsGrid from '@/components/ProjectsGrid'
 import NextImage from 'next/image'
 
 import img02 from '../../../public/img/02.jpg'
+import Title from '@/components/Title'
 const ResearchSection = React.forwardRef<HTMLDivElement>((props, ref) => {
 	const quality = 30
 	return (
 		<S.Wrapper ref={ref} id={'researchSection'}>
+			<Title>PESQUISA</Title>
 			<ProjectsGrid>
 				<NextImage src={img02} alt={'pesquisa 1'} quality={quality} />
 			</ProjectsGrid>
