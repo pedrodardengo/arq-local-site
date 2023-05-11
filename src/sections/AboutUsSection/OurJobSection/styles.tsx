@@ -37,6 +37,7 @@ export const PanelsDiv = styled.div`
 
 export const PanelDiv = styled.div`
 	width: 100%;
+	min-height: 344px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;

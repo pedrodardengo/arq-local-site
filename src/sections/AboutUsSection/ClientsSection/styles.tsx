@@ -53,5 +53,12 @@ export const PanelsDiv = styled.div`
 
 export const PanelDiv = styled.div`
 	padding: 32px;
+	min-height: 200px;
+	max-width: 500px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	gap: 32px;
 	background-color: ${THEME.colors.secondaryColor};
 `

@@ -33,7 +33,7 @@ const ClientsSection = () => {
 			<S.ContentDiv>
 				<S.TitleAndPanelsDiv>
 					<S.TitleDiv>
-						<Textfit mode="single" max={48}>
+						<Textfit mode="single" max={64}>
 							Nossa prática <br />
 							criativa e criteriosa <br />
 							gera resultados <br />
@@ -45,7 +45,6 @@ const ClientsSection = () => {
 							<p style={{ fontWeight: THEME.fontWeight.semiBold }}>
 								Jéssica Oliveira
 							</p>
-							<br />
 							<p>
 								“A Mariana está planejando todos os detalhes do nosso novo
 								apartamento. Se você precisa de uma empresa séria, comprometida
@@ -57,7 +56,6 @@ const ClientsSection = () => {
 							<p style={{ fontWeight: THEME.fontWeight.semiBold }}>
 								Helder Lisboa
 							</p>
-							<br />
 							<p>
 								“Agradecemos pela competência e pelo carinho com nosso projeto!
 								Arquitetos maravilhosos!”
