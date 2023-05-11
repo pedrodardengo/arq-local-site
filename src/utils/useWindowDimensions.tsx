@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
-
-export function useWindowDimensions(): {
+export type WindowDimension = {
 	width: number
 	height: number
-} {
+}
+export function useWindowDimensions(): WindowDimension {
 	const [windowDimension, setWindowDimensions] = useState({
 		width: 0,
 		height: 0

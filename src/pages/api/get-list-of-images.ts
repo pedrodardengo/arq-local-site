@@ -9,8 +9,8 @@ export default async function handler(
 	const imageListName = req.query.imageList as string
 	const endpoint = process.env.PRISMIC_API_URL || ''
 	const prismicClient = prismic.createClient(endpoint)
-	const response = await prismicClient.getAllByType(imageListName)
-	const imageObjects: ImageDTO[] = response[0].data.images.map(
+	const response = await prismicClient.getSingle(imageListName)
+	const imageObjects: ImageDTO[] = response.data.images.map(
 		(i: { image: ImageDTO }) => i.image
 	)
 	return res.status(200).json(imageObjects)

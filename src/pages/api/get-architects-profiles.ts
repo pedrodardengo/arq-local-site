@@ -8,8 +8,8 @@ export default async function handler(
 ) {
 	const endpoint = process.env.PRISMIC_API_URL || ''
 	const prismicClient = prismic.createClient(endpoint)
-	const response = await prismicClient.getAllByType('profiles')
-	const body = response[0].data
+	const response = await prismicClient.getSingle('profiles')
+	const body = response.data
 	const profiles: ProfileDTO[] = [
 		{
 			image: body.image_1,
