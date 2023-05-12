@@ -24,6 +24,5 @@ export const Button = styled.div`
 		background-size: 100% 100%;
 		color: ${THEME.colors.secondaryColor};
 	}
-	border-radius: 5px;
 	max-width: 205px;
 `

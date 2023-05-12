@@ -45,3 +45,22 @@ export const PanelDiv = styled.div`
 	padding: 45px;
 	background-color: ${THEME.colors.secondaryColor};
 `
+
+export const ButtonDiv = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	> p {
+		padding-bottom: 8px;
+		color: ${THEME.colors.secondaryColor};
+		text-align: center;
+		border-bottom: 1px solid ${THEME.colors.secondaryColor};
+		transition: font-weight 0.1s ease-in-out;
+		cursor: pointer;
+
+		&:hover {
+			font-weight: 600;
+		}
+	}
+`

@@ -41,6 +41,7 @@ export const ProfilesDiv = styled.div`
 		> img {
 			aspect-ratio: 3/4;
 			width: 100%;
+			transition: opacity 0.8s ease-in-out;
 		}
 		&:hover {
 			p {

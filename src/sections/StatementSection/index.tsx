@@ -33,7 +33,9 @@ const StatementSection = () => {
 
 	return (
 		<S.Wrapper>
-			<Statement>{statement}</Statement>
+			<Statement refToScrollOnChevronClick={'projectsSection'}>
+				{statement}
+			</Statement>
 		</S.Wrapper>
 	)
 }

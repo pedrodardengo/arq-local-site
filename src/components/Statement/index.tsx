@@ -1,16 +1,18 @@
 import React from 'react'
 import useOnScreen from '@/utils/useOnScreen'
 import * as S from './styles'
-import { RxChevronDown } from 'react-icons/rx'
-import { scrollOneScreenHeight } from '@/utils/scrollToRef'
+import { VscChevronDown } from 'react-icons/vsc'
+import { scrollToRef } from '@/utils/scrollToRef'
 import { Textfit } from 'react-textfit'
 
 const Statement = ({
 	children,
-	style
+	style,
+	refToScrollOnChevronClick
 }: {
 	children: React.ReactNode
 	style?: React.CSSProperties
+	refToScrollOnChevronClick: string
 }) => {
 	const statementRef = React.useRef<HTMLDivElement>(null)
 	const [alreadyBeenSeen, setAlreadyBeenSeen] = React.useState(false)
@@ -30,7 +32,10 @@ const Statement = ({
 				</Textfit>
 			</h1>
 			<S.ChevronDiv isEntireBoxVisible={isVisible}>
-				<RxChevronDown size={50} onClick={scrollOneScreenHeight} />
+				<VscChevronDown
+					size={50}
+					onClick={() => scrollToRef(refToScrollOnChevronClick)}
+				/>
 			</S.ChevronDiv>
 		</S.Wrapper>
 	)

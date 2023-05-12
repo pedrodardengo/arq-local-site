@@ -4,13 +4,9 @@ import THEME from '@/styles/theme'
 export const Wrapper = styled.div`
 	position: relative;
 	width: 100%;
-	left: 12.5%;
-	@media (max-width: ${THEME.screenSize.tablet}px) {
-		left: 16.6%;
-	}
-	@media (max-width: ${THEME.screenSize.mobile}px) {
-		left: 12.5%;
-	}
+	display: flex;
+	align-items: center;
+	justify-content: center;
 `
 
 export const Content = styled.div`

@@ -2,6 +2,7 @@ import React from 'react'
 import * as S from './styles'
 import axios from 'axios'
 import { TextDTO } from '@/types/TextDTO'
+import { scrollToRef } from '@/utils/scrollToRef'
 
 const OurJobSection = () => {
 	const [panelsTexts, setPanelsTexts] = React.useState<TextDTO[]>([])
@@ -39,6 +40,9 @@ const OurJobSection = () => {
 					Sempre que possível, em um mesmo projeto unimos as duas áreas para
 					fortalecer os resultados.
 				</h2>
+				<S.ButtonDiv>
+					<p onClick={() => scrollToRef('projectsSection')}>VER PROJETOS</p>
+				</S.ButtonDiv>
 			</S.Content>
 		</S.Wrapper>
 	)

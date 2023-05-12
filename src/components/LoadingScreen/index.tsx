@@ -27,9 +27,6 @@ const LoadingScreen = ({
 			if (imagesLoadingProgress >= progress + 10) {
 				setProgress(progress + 10)
 			}
-			if (imagesLoadingProgress >= 100) {
-				setProgress(100)
-			}
 			if (progress >= 100) {
 				setLoaded(true)
 			}

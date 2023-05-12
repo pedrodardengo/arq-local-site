@@ -73,7 +73,10 @@ export const DropDownBurgerButton = ({
 				<NavBarButton textColor={elementsColor} sectionRef={'projectsSection'}>
 					PROJETOS
 				</NavBarButton>
-				<NavBarButton textColor={elementsColor} sectionRef={'researchSection'}>
+				<NavBarButton
+					textColor={elementsColor}
+					sectionRef={'researchesSection'}
+				>
 					PESQUISA
 				</NavBarButton>
 				<NavBarButton textColor={elementsColor} sectionRef={'aboutUsSection'}>
