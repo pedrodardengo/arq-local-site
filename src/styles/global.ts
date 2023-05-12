@@ -15,23 +15,22 @@ const GlobalStyles = createGlobalStyle`
       -webkit-background-clip: padding-box;
       background-clip: padding-box;
 
-      //
       ::-webkit-scrollbar {
         width: 10px;
+				color: transparent;
       }
 
       ::-webkit-scrollbar-track {
-        background: transparent;
-        box-shadow: inset 0 0 1px grey;
+				background: linear-gradient(to right, white calc(50% - 0.5px), black, white calc(50% + 0.5px));
+				background-size: 1px 100%;
+				background-position: center;
+				background-repeat: no-repeat;
       }
 
       ::-webkit-scrollbar-thumb {
-        background: lightgray;
+        background: black;
       }
 
-      ::-webkit-scrollbar-thumb:hover {
-        background: darkgrey;
-      }
 
       p {
         font-weight: ${THEME.fontWeight.regular};

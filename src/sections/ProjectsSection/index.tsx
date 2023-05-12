@@ -3,86 +3,84 @@ import * as S from './styles'
 import ProjectsGrid from '@/components/ProjectsGrid'
 import { useRouter } from 'next/router'
 import axios from 'axios'
-import { ProjectDTO } from '@/types/ProjectDTO'
 import Title from '@/components/Title'
 import { useWindowDimensions } from '@/utils/useWindowDimensions'
 import THEME from '@/styles/theme'
+import { GridElementDTO } from '@/types/GridElementDTO'
 
 const ProjectsSection = React.forwardRef<HTMLDivElement>((props, ref) => {
 	const router = useRouter()
-	const goToProjectsPage = () => {
-		router.push('/projetos')
+	const goToProjectsPage = (slug: string) => {
+		router.push({ pathname: `/projetos/${slug}` })
 	}
 
-	const [projectObjects, setProjectObjects] = React.useState<ProjectDTO[]>([])
+	const [gridElement, setGridElement] = React.useState<GridElementDTO[]>([])
 	const [exhibitedProjects, setExhibitedProjects] = React.useState<
-		ProjectDTO[]
+		GridElementDTO[]
 	>([])
 	const windowDimensions = useWindowDimensions()
 	const getProjectObjects = () => {
-		axios.get('/api/get-projects').then(function (response) {
-			setProjectObjects(response.data)
+		axios.get('/api/get-projects-grid-elements').then(function (response) {
+			setGridElement(response.data)
 		})
 	}
 
 	React.useEffect(getProjectObjects, [])
 
 	React.useEffect(() => {
-		if (projectObjects.length === 0) return
+		if (gridElement.length === 0) return
 		let gridColumns = windowDimensions.width > THEME.screenSize.mobile ? 3 : 2
-		if (gridColumns > projectObjects.length) {
-			gridColumns = projectObjects.length
+		if (gridColumns > gridElement.length) {
+			gridColumns = gridElement.length
 		}
-		setExhibitedProjects(projectObjects.slice(0, gridColumns))
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [projectObjects])
+		setExhibitedProjects(gridElement.slice(0, gridColumns))
+	}, [gridElement])
 
 	const handleOnResizeResize = () => {
-		if (exhibitedProjects.length == projectObjects.length) return
+		if (exhibitedProjects.length == gridElement.length) return
 		const gridColumns = windowDimensions.width > THEME.screenSize.mobile ? 3 : 2
 		const toBeRemoved = exhibitedProjects.length % gridColumns
 		if (
 			gridColumns > exhibitedProjects.length &&
-			projectObjects.length >= gridColumns
+			gridElement.length >= gridColumns
 		) {
-			setExhibitedProjects(projectObjects.slice(0, gridColumns))
+			setExhibitedProjects(gridElement.slice(0, gridColumns))
 			return
 		}
 		if (toBeRemoved == 0) return
 		setExhibitedProjects(
-			projectObjects.slice(0, exhibitedProjects.length - toBeRemoved)
+			gridElement.slice(0, exhibitedProjects.length - toBeRemoved)
 		)
 	}
-	// eslint-disable-next-line react-hooks/exhaustive-deps
 	React.useEffect(handleOnResizeResize, [windowDimensions.width])
 	function showMoreProjects() {
-		if (exhibitedProjects.length == projectObjects.length) return
+		if (exhibitedProjects.length == gridElement.length) return
 		const projectsToAdd =
 			windowDimensions.width > THEME.screenSize.mobile ? 3 : 2
 		const lastIndex = Math.min(
 			exhibitedProjects.length + projectsToAdd,
-			projectObjects.length
+			gridElement.length
 		)
-		setExhibitedProjects(projectObjects.slice(0, lastIndex))
+		setExhibitedProjects(gridElement.slice(0, lastIndex))
 	}
 
 	return (
 		<S.Wrapper ref={ref} id={'projectsSection'}>
 			<Title>PROJETOS</Title>
 			<ProjectsGrid>
-				{exhibitedProjects.map((projectObject, index) => {
+				{exhibitedProjects.map((gridElement, index) => {
 					return (
 						<img
 							key={index}
-							src={projectObject.thumbnail.url}
-							alt={projectObject.thumbnail.alt}
-							onClick={goToProjectsPage}
+							src={gridElement.thumbnail.url}
+							alt={gridElement.thumbnail.alt}
+							onClick={() => goToProjectsPage(gridElement.slug)}
 						/>
 					)
 				})}
 			</ProjectsGrid>
 			<S.MoreProjectsButton onClick={showMoreProjects}>
-				{exhibitedProjects.length == projectObjects.length ? '' : 'VER MAIS'}
+				{exhibitedProjects.length == gridElement.length ? '' : 'VER MAIS'}
 			</S.MoreProjectsButton>
 		</S.Wrapper>
 	)

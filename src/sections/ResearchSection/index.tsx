@@ -6,7 +6,7 @@ import axios from 'axios'
 import Title from '@/components/Title'
 import { useWindowDimensions } from '@/utils/useWindowDimensions'
 import THEME from '@/styles/theme'
-import { ResearchDTO } from '@/types/ResearchDTO'
+import { GridElementDTO } from '@/types/GridElementDTO'
 
 const ResearchesSection = React.forwardRef<HTMLDivElement>((props, ref) => {
 	const router = useRouter()
@@ -14,15 +14,15 @@ const ResearchesSection = React.forwardRef<HTMLDivElement>((props, ref) => {
 		router.push('/pesquisas')
 	}
 
-	const [researchObjects, setResearchObjects] = React.useState<ResearchDTO[]>(
-		[]
-	)
+	const [researchObjects, setResearchObjects] = React.useState<
+		GridElementDTO[]
+	>([])
 	const [exhibitedResearches, setExhibitedResearches] = React.useState<
-		ResearchDTO[]
+		GridElementDTO[]
 	>([])
 	const windowDimensions = useWindowDimensions()
 	const getResearchObjects = () => {
-		axios.get('/api/get-researches').then(function (response) {
+		axios.get('/api/get-researches-grid-elements').then(function (response) {
 			setResearchObjects(response.data)
 		})
 	}
@@ -36,7 +36,6 @@ const ResearchesSection = React.forwardRef<HTMLDivElement>((props, ref) => {
 			gridColumns = researchObjects.length
 		}
 		setExhibitedResearches(researchObjects.slice(0, gridColumns))
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [researchObjects])
 
 	const handleOnResizeResize = () => {
@@ -55,7 +54,6 @@ const ResearchesSection = React.forwardRef<HTMLDivElement>((props, ref) => {
 			researchObjects.slice(0, exhibitedResearches.length - toBeRemoved)
 		)
 	}
-	// eslint-disable-next-line react-hooks/exhaustive-deps
 	React.useEffect(handleOnResizeResize, [windowDimensions.width])
 	function showMoreResearches() {
 		if (exhibitedResearches.length == researchObjects.length) return

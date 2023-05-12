@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import * as prismic from '@prismicio/client'
-import { ProjectDTO } from '@/types/ProjectDTO'
+import { GridElementDTO } from '@/types/GridElementDTO'
 
 export default async function handler(
 	req: NextApiRequest,
@@ -15,14 +15,11 @@ export default async function handler(
 		(p: { project: { id: string } }) => p.project.id
 	)
 	const response = await prismicClient.getAllByIDs(projectsIDs)
-	const idToProjectMap: { [key: string]: ProjectDTO } = {}
-	response.map((projectObject: { data: any; id: string }) => {
-		const data = projectObject.data
+	const idToProjectMap: { [key: string]: GridElementDTO } = {}
+	response.map((projectObject) => {
 		idToProjectMap[projectObject.id] = {
-			thumbnail: data.thumbnail,
-			images: data.images,
-			title: data.title[0].text,
-			description: data.description[0].text
+			thumbnail: projectObject.data.thumbnail,
+			slug: projectObject.uid!
 		}
 	})
 	const projectObjectsOrdered = projectsIDs.map((id: string) => {

@@ -7,11 +7,11 @@ import { DropDownBurgerButton } from '@/components/Buttons/DropDownBurguerButton
 import InstitutionalLogo from '@/components/Logos/InstitutionalLogo'
 import { RiWhatsappFill, RiInstagramFill } from 'react-icons/ri'
 import { redirectToInstagram, redirectToWhatsapp } from '@/utils/redirectToPage'
-import { scrollToStart } from '@/utils/scrollToRef'
+import { useRouter } from 'next/router'
 
 const NavBar = () => {
 	const windowWidth = useWindowDimensions().width
-
+	const router = useRouter()
 	const navBarButtons = (
 		<>
 			<NavBarButton sectionRef={'projectsSection'}>PROJETOS</NavBarButton>
@@ -45,7 +45,7 @@ const NavBar = () => {
 				<InstitutionalLogo
 					color={THEME.colors.accentColor}
 					sizeMultiplier={windowWidth < THEME.screenSize.mobile ? 0.9 : 1}
-					onClick={scrollToStart}
+					onClick={() => router.push('/')}
 					highlightColorOnHover={THEME.colors.primaryColor}
 				/>
 				{toRender}
