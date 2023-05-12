@@ -38,7 +38,7 @@ const HeroSectionNavBar = ({ style }: HeroSectionNavBarProps) => {
 			</NavBarButton>
 			<NavBarButton
 				textColor={elementsColor}
-				sectionRef={'researchSection'}
+				sectionRef={'researchesSection'}
 				addUnderLineIfOnSection={true}
 			>
 				PESQUISA

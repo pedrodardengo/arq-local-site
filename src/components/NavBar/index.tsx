@@ -15,7 +15,7 @@ const NavBar = () => {
 	const navBarButtons = (
 		<>
 			<NavBarButton sectionRef={'projectsSection'}>PROJETOS</NavBarButton>
-			<NavBarButton sectionRef={'researchSection'}>PESQUISA</NavBarButton>
+			<NavBarButton sectionRef={'researchesSection'}>PESQUISA</NavBarButton>
 			<NavBarButton sectionRef={'aboutUsSection'}>SOBRE</NavBarButton>
 			<NavBarButton sectionRef={'contactUsSection'}>CONTATO</NavBarButton>
 		</>
