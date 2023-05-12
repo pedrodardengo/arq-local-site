@@ -30,6 +30,7 @@ export const ContentWrapper = styled.div`
 export const UpperContent = styled.div`
 	margin-bottom: 128px;
 	min-height: 80px;
+	max-width: 1200px;
 	display: flex;
 	align-items: center;
 	justify-content: center;

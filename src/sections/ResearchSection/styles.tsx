@@ -8,7 +8,6 @@ export const Wrapper = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 64px;
 `
 
 export const MoreResearchesButton = styled.p`
@@ -20,4 +19,9 @@ export const MoreResearchesButton = styled.p`
 		color: ${THEME.colors.accentColor};
 		border-bottom: 1px solid ${THEME.colors.accentColor};
 	}
+`
+
+export const ResearchesGridDiv = styled.div`
+	margin-top: 40px;
+	margin-bottom: 20px;
 `

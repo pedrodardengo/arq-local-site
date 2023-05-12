@@ -3,10 +3,6 @@ import THEME from '@/styles/theme'
 
 export const Wrapper = styled.div`
 	position: relative;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-self: flex-start;
 `
 
 export const HeaderDiv = styled.div`
@@ -15,12 +11,10 @@ export const HeaderDiv = styled.div`
 	z-index: 1;
 `
 
-export const NumberSpan = styled.div`
-	font-size: ${THEME.fontSize.title3Desktop}px;
+export const NumberHeader = styled.h2`
 	font-weight: ${THEME.fontWeight.semiBold};
 `
-export const TitleSpan = styled.div`
-	font-size: ${THEME.fontSize.title3Desktop}px;
+export const TitleHeader = styled.h2`
 	font-weight: ${THEME.fontWeight.semiBold};
 `
 

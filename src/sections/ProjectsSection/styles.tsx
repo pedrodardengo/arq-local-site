@@ -2,11 +2,11 @@ import styled from 'styled-components'
 import THEME from '@/styles/theme'
 
 export const Wrapper = styled.div`
+	margin-top: 64px;
 	width: 75%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 64px;
 	background-color: ${THEME.colors.secondaryColor};
 `
 
@@ -19,4 +19,9 @@ export const MoreProjectsButton = styled.p`
 		color: ${THEME.colors.accentColor};
 		border-bottom: 1px solid ${THEME.colors.accentColor};
 	}
+`
+
+export const ProjectsGridDiv = styled.div`
+	margin-top: 40px;
+	margin-bottom: 20px;
 `

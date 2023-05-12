@@ -37,30 +37,33 @@ export const PanelsDiv = styled.div`
 
 export const PanelDiv = styled.div`
 	width: 100%;
-	min-height: 344px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
-	padding: 45px;
+	padding: 60px;
 	background-color: ${THEME.colors.secondaryColor};
 `
 
 export const ButtonDiv = styled.div`
+	margin-top: 40px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	height: 30px;
 
 	> p {
 		padding-bottom: 8px;
 		color: ${THEME.colors.secondaryColor};
 		text-align: center;
 		border-bottom: 1px solid ${THEME.colors.secondaryColor};
-		transition: font-weight 0.1s ease-in-out;
+		transition: font-weight 0.2s ease-in-out,
+			border-bottom-width 0.2s ease-in-out;
 		cursor: pointer;
 
 		&:hover {
-			font-weight: 600;
+			font-weight: 800;
+			border-bottom: 4px solid ${THEME.colors.secondaryColor};
 		}
 	}
 `

@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
 	width: 100%;
 	display: grid;
 	gap: 2.5%;
-	grid-template-columns: repeat(4, minmax(0px, 600px));
+	grid-template-columns: repeat(3, minmax(0px, 600px));
 
 	a {
 		display: flex;

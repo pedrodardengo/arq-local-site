@@ -1,6 +1,6 @@
 import React from 'react'
 import * as S from './styles'
-import ProjectsGrid from '@/components/ProjectsGrid'
+import ProjectsGrid from 'src/components/ElementsGrid'
 import { useRouter } from 'next/router'
 import axios from 'axios'
 import Title from '@/components/Title'
@@ -67,18 +67,20 @@ const ProjectsSection = React.forwardRef<HTMLDivElement>((props, ref) => {
 	return (
 		<S.Wrapper ref={ref} id={'projectsSection'}>
 			<Title>PROJETOS</Title>
-			<ProjectsGrid>
-				{exhibitedProjects.map((gridElement, index) => {
-					return (
-						<img
-							key={index}
-							src={gridElement.thumbnail.url}
-							alt={gridElement.thumbnail.alt}
-							onClick={() => goToProjectsPage(gridElement.slug)}
-						/>
-					)
-				})}
-			</ProjectsGrid>
+			<S.ProjectsGridDiv>
+				<ProjectsGrid>
+					{exhibitedProjects.map((gridElement, index) => {
+						return (
+							<img
+								key={index}
+								src={gridElement.thumbnail.url}
+								alt={gridElement.thumbnail.alt}
+								onClick={() => goToProjectsPage(gridElement.slug)}
+							/>
+						)
+					})}
+				</ProjectsGrid>
+			</S.ProjectsGridDiv>
 			<S.MoreProjectsButton onClick={showMoreProjects}>
 				{exhibitedProjects.length == gridElement.length ? '' : 'VER MAIS'}
 			</S.MoreProjectsButton>

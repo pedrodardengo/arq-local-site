@@ -43,6 +43,8 @@ export const TitleDiv = styled.div`
 export const PanelsDiv = styled.div`
 	display: flex;
 	flex-direction: column;
+	align-items: flex-end;
+
 	gap: 64px;
 	width: 45%;
 
@@ -52,9 +54,9 @@ export const PanelsDiv = styled.div`
 `
 
 export const PanelDiv = styled.div`
-	padding: 32px;
+	padding: 60px;
 	min-height: 200px;
-	max-width: 500px;
+	max-width: 369px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;

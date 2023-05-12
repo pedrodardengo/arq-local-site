@@ -22,8 +22,9 @@ export const TitleDiv = styled.div`
 	max-width: 700px;
 	text-align: center;
 `
-export const StepsGrid = styled.div`
+export const StepsGridDiv = styled.div`
 	margin-top: 128px;
+	width: 100%;
 	display: grid;
 	grid-template-columns: repeat(4, minmax(0px, 1fr));
 	grid-template-rows: auto;

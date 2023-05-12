@@ -6,7 +6,6 @@ export const GridContainer = styled.div<{
 }>`
 	display: grid;
 	grid-gap: ${(props) => props.gap}px;
-	max-width: 1500px;
 	grid-template-columns: repeat(3, 1fr);
 
 	@media (max-width: ${THEME.screenSize.mobile}px) {

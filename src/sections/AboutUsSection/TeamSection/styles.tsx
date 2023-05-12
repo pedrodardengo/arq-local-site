@@ -17,6 +17,9 @@ export const Content = styled.div`
 	justify-content: center;
 	align-items: center;
 	gap: 64px;
+	@media (max-width: ${THEME.screenSize.tablet}px) {
+		width: 75%;
+	}
 `
 export const TitleDiv = styled.div`
 	max-width: 500px;

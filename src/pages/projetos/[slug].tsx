@@ -1,7 +1,7 @@
 import React from 'react'
 import NavBar from '@/components/NavBar'
 import { useRouter } from 'next/router'
-import ProjectSection from '@/sections/projectSection'
+import ProjectSection from 'src/sections/ProjectSection'
 import { ProjectPageContentWrapper } from '@/sections/styles'
 
 const ProjectPage = () => {

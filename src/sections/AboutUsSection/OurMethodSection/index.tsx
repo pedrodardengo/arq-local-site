@@ -17,7 +17,7 @@ const OurMethodSection = () => {
 						possam ser vivenciadas em sua plenitude.
 					</h2>
 				</S.TitleDiv>
-				<S.StepsGrid>
+				<S.StepsGridDiv>
 					<CreativeStep
 						stepNumber={1}
 						stepTitle={'demanda'}
@@ -57,7 +57,7 @@ const OurMethodSection = () => {
 						deste processo obtemos um projeto coerente e assertivo, compatível
 						com os objetivos e capaz de concretizar novas ideias.
 					</CreativeStep>
-				</S.StepsGrid>
+				</S.StepsGridDiv>
 			</S.Content>
 		</S.Wrapper>
 	)

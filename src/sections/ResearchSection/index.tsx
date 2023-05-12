@@ -1,6 +1,6 @@
 import React from 'react'
 import * as S from './styles'
-import ProjectsGrid from '@/components/ProjectsGrid'
+import ElementsGrid from 'src/components/ElementsGrid'
 import { useRouter } from 'next/router'
 import axios from 'axios'
 import Title from '@/components/Title'
@@ -69,18 +69,20 @@ const ResearchesSection = React.forwardRef<HTMLDivElement>((props, ref) => {
 	return (
 		<S.Wrapper ref={ref} id={'researchesSection'}>
 			<Title>PESQUISA</Title>
-			<ProjectsGrid>
-				{exhibitedResearches.map((researchObject, index) => {
-					return (
-						<img
-							key={index}
-							src={researchObject.thumbnail.url}
-							alt={researchObject.thumbnail.alt}
-							onClick={goToResearchesPage}
-						/>
-					)
-				})}
-			</ProjectsGrid>
+			<S.ResearchesGridDiv>
+				<ElementsGrid>
+					{exhibitedResearches.map((researchObject, index) => {
+						return (
+							<img
+								key={index}
+								src={researchObject.thumbnail.url}
+								alt={researchObject.thumbnail.alt}
+								onClick={goToResearchesPage}
+							/>
+						)
+					})}
+				</ElementsGrid>
+			</S.ResearchesGridDiv>
 			<S.MoreResearchesButton onClick={showMoreResearches}>
 				{exhibitedResearches.length == researchObjects.length ? '' : 'VER MAIS'}
 			</S.MoreResearchesButton>
