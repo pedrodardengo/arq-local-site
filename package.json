@@ -38,6 +38,7 @@
     "react-email": "^1.9.3",
     "react-icons": "^4.8.0",
     "react-scroll": "^1.8.9",
+    "react-simple-typewriter": "^5.0.1",
     "react-textfit": "^1.1.1",
     "styled-components": "^5.3.10"
   },

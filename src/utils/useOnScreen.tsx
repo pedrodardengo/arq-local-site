@@ -7,7 +7,6 @@ export default function useOnScreen(
 ): boolean {
 	let objectRef!: HTMLElement
 	if (typeof ref === 'string') {
-		console.log('')
 		objectRef = document.getElementById(ref as string) as HTMLElement
 	} else if (typeof ref === 'object' && 'current' in ref) {
 		objectRef = ref.current as HTMLElement
