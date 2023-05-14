@@ -38,6 +38,7 @@ export const TitleDiv = styled.div`
 	width: 50%;
 	@media (max-width: ${THEME.screenSize.tablet}px) {
 		width: 100%;
+		text-align: center;
 	}
 `
 export const PanelsDiv = styled.div`
@@ -50,6 +51,7 @@ export const PanelsDiv = styled.div`
 
 	@media (max-width: ${THEME.screenSize.tablet}px) {
 		width: 100%;
+		align-items: center;
 	}
 `
 
