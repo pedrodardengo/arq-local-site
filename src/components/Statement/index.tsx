@@ -3,7 +3,6 @@ import useOnScreen from '@/utils/useOnScreen'
 import * as S from './styles'
 import { VscChevronDown } from 'react-icons/vsc'
 import { scrollToRef } from '@/utils/scrollToRef'
-import { Textfit } from 'react-textfit'
 
 const Statement = ({
 	children,
@@ -38,11 +37,7 @@ const Statement = ({
 	}
 	return (
 		<S.Wrapper isVisible={alreadyBeenSeen} style={style} ref={statementBoxRef}>
-			<h1 ref={statementRef}>
-				<Textfit mode="single" max={65}>
-					{children}
-				</Textfit>
-			</h1>
+			<h1 ref={statementRef}>{children}</h1>
 			{chevron}
 		</S.Wrapper>
 	)

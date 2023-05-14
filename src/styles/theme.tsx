@@ -26,9 +26,9 @@ const THEME = {
 		title2Mobile: 24,
 		title2Tablet: 24,
 		title2Desktop: 24,
-		title1Mobile: 34,
-		title1Tablet: 40,
-		title1Desktop: 48
+		title1Mobile: 23,
+		title1Tablet: 25,
+		title1Desktop: 50
 	},
 	fontWeight: {
 		extraLight: 200,
