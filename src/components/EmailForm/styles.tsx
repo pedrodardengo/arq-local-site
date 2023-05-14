@@ -59,7 +59,7 @@ export const AlertMessage = styled.span`
 `
 
 export const Button = styled.button`
-	margin-top: 48px;
+	margin-top: 20px;
 	padding: 8px;
 	width: auto;
 	display: flex;

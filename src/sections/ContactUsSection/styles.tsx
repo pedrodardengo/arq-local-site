@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import THEME from '@/styles/theme'
+
 export const Wrapper = styled.div`
 	width: 75%;
 	display: flex;
@@ -22,9 +22,14 @@ export const TextDiv = styled.div`
 `
 
 export const EmailFormDiv = styled.div`
-	width: 66.6%;
-
-	@media (max-width: ${THEME.screenSize.tablet}px) {
-		width: 100%;
+	max-width: 700px;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 48px;
+	width: 100%;
+	> div {
+		width: 700px;
 	}
 `

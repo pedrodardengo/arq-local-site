@@ -20,10 +20,10 @@ const ContactUsSection = React.forwardRef<HTMLDivElement>((props, ref) => {
 					Fale com a gente!
 				</ContactButton>
 				<S.EmailFormDiv>
-					<p style={{ marginBottom: 48 }}>
+					<h2>
 						Se preferir, você pode iniciar a nossa conversa por aqui. Nos conte
 						um pouco sobre você e entraremos em contato o mais breve possível.
-					</p>
+					</h2>
 					<EmailForm />
 				</S.EmailFormDiv>
 			</S.Content>

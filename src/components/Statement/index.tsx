@@ -12,7 +12,7 @@ const Statement = ({
 }: {
 	children: React.ReactNode
 	style?: React.CSSProperties
-	refToScrollOnChevronClick: string
+	refToScrollOnChevronClick?: string
 }) => {
 	const statementRef = React.useRef<HTMLDivElement>(null)
 	const [alreadyBeenSeen, setAlreadyBeenSeen] = React.useState(false)
@@ -23,7 +23,19 @@ const Statement = ({
 			setAlreadyBeenSeen(true)
 		}
 	}, [isVisible])
-
+	let chevron = <></>
+	if (refToScrollOnChevronClick) {
+		chevron = (
+			<S.ChevronDiv isEntireBoxVisible={isVisible}>
+				<VscChevronDown
+					size={50}
+					onClick={() => {
+						scrollToRef(refToScrollOnChevronClick)
+					}}
+				/>
+			</S.ChevronDiv>
+		)
+	}
 	return (
 		<S.Wrapper isVisible={alreadyBeenSeen} style={style} ref={statementBoxRef}>
 			<h1 ref={statementRef}>
@@ -31,12 +43,7 @@ const Statement = ({
 					{children}
 				</Textfit>
 			</h1>
-			<S.ChevronDiv isEntireBoxVisible={isVisible}>
-				<VscChevronDown
-					size={50}
-					onClick={() => scrollToRef(refToScrollOnChevronClick)}
-				/>
-			</S.ChevronDiv>
+			{chevron}
 		</S.Wrapper>
 	)
 }

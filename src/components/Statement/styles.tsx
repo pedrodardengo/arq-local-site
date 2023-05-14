@@ -15,7 +15,7 @@ export const Wrapper = styled.div<{
 	text-align: center;
 	align-items: center;
 	height: 100lvh;
-	gap: 128px;
+	gap: 200px;
 	> h1 {
 		width: 100%;
 		opacity: ${(props) => (props.isVisible ? '1' : '0')};
@@ -30,6 +30,11 @@ export const Wrapper = styled.div<{
 `
 
 export const ChevronDiv = styled.div<{ isEntireBoxVisible: boolean }>`
+	position: absolute;
+	bottom: 15%;
+	@media (max-height: 800px) {
+		bottom: 5%;
+	}
 	display: flex;
 	align-items: center;
 	justify-content: center;

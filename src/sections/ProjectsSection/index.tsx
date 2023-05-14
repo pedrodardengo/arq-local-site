@@ -29,11 +29,12 @@ const ProjectsSection = React.forwardRef<HTMLDivElement>((props, ref) => {
 
 	React.useEffect(() => {
 		if (gridElement.length === 0) return
-		let gridColumns = windowDimensions.width > THEME.screenSize.mobile ? 3 : 2
-		if (gridColumns > gridElement.length) {
-			gridColumns = gridElement.length
+		let initialGridNumber =
+			windowDimensions.width > THEME.screenSize.mobile ? 12 : 12
+		if (initialGridNumber > gridElement.length) {
+			initialGridNumber = gridElement.length
 		}
-		setExhibitedProjects(gridElement.slice(0, gridColumns))
+		setExhibitedProjects(gridElement.slice(0, initialGridNumber))
 	}, [gridElement])
 
 	const handleOnResizeResize = () => {

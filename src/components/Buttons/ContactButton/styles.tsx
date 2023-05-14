@@ -4,7 +4,7 @@ import THEME from '@/styles/theme'
 export const Button = styled.div`
 	color: ${THEME.colors.primaryColor};
 	border: 1px solid ${THEME.colors.accentColor};
-	font-size: ${THEME.fontSize.buttons}px;
+	font-size: ${THEME.fontSize.title2Desktop}px;
 	font-weight: ${THEME.fontWeight.semiBold};
 	padding: 12px 15px 12px 15px;
 	cursor: pointer;
@@ -24,5 +24,5 @@ export const Button = styled.div`
 		background-size: 100% 100%;
 		color: ${THEME.colors.secondaryColor};
 	}
-	max-width: 205px;
+	max-width: 270px;
 `

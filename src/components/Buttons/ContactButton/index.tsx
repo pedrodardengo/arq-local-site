@@ -13,7 +13,7 @@ const ContactButton = ({
 	return (
 		<S.Button style={style} onClick={redirectToWhatsapp}>
 			{children}
-			<RiWhatsappFill size={18} />
+			<RiWhatsappFill size={25} />
 		</S.Button>
 	)
 }
