@@ -33,12 +33,18 @@ export const TitleAndPanelsDiv = styled.div`
 	}
 `
 
-export const TitleDiv = styled.div`
+export const TitleHeader = styled.div`
 	color: ${THEME.colors.secondaryColor};
+	font-size: ${THEME.fontSize.title1Desktop}px;
 	width: 50%;
+	max-width: 490px;
 	@media (max-width: ${THEME.screenSize.tablet}px) {
 		width: 100%;
 		text-align: center;
+		font-size: ${THEME.fontSize.title1Tablet}px;
+	}
+	@media (max-width: ${THEME.screenSize.mobile}px) {
+		font-size: ${THEME.fontSize.title1Mobile}px;
 	}
 `
 export const PanelsDiv = styled.div`

@@ -6,8 +6,6 @@ import { ImageDTO } from '@/types/ImageDTO'
 import NextImage from 'next/image'
 import Title from '@/components/Title'
 import THEME from '@/styles/theme'
-import { Textfit } from 'react-textfit'
-
 const ClientsSection = () => {
 	const [clientLogos, setClientLogos] = React.useState<ImageDTO[]>([
 		{
@@ -32,14 +30,9 @@ const ClientsSection = () => {
 		<S.Wrapper>
 			<S.ContentDiv>
 				<S.TitleAndPanelsDiv>
-					<S.TitleDiv>
-						<Textfit mode="single" max={64}>
-							Nossa prática <br />
-							criativa e criteriosa <br />
-							gera resultados <br />
-							positivos
-						</Textfit>
-					</S.TitleDiv>
+					<S.TitleHeader>
+						Nossa prática criativa e criteriosa gera resultados positivos
+					</S.TitleHeader>
 					<S.PanelsDiv>
 						<S.PanelDiv>
 							<p style={{ fontWeight: THEME.fontWeight.semiBold }}>

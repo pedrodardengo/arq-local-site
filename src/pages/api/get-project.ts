@@ -17,7 +17,14 @@ export default async function handler(
 		title: response.data.title[0].text,
 		description: response.data.description[0].text,
 		thumbnail: response.data.thumbnail,
-		images: response.data.images
+		images: response.data.images.map(
+			(imageObject: { image: { alt: string; url: string } }) => {
+				return {
+					alt: imageObject.image.alt,
+					url: imageObject.image.url
+				}
+			}
+		)
 	}
 
 	return res.status(200).json(project)
