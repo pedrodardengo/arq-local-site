@@ -9,22 +9,17 @@ const StatementSection = () => {
 	const windowDimension = useWindowDimensions()
 
 	React.useEffect(() => {
-		if (windowDimension.width < THEME.screenSize.mobile) {
+		if (windowDimension.width < THEME.screenSize.tablet) {
 			setStatement(
 				<>
-					Criamos projetos <br />
-					autênticos para <br />
-					pessoas e empresas <br />
-					que buscam <br />
-					melhorar vidas e <br />
-					cidades.
+					Criamos projetos autênticos para pessoas e empresas que buscam
+					melhorar vidas e cidades.
 				</>
 			)
 		} else {
 			setStatement(
 				<>
-					Criamos projetos autênticos para <br />
-					pessoas e empresas que buscam <br />
+					Criamos projetos autênticos para pessoas e empresas que buscam
 					melhorar vidas e cidades.
 				</>
 			)

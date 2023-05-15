@@ -18,7 +18,6 @@ const ProjectSection = ({ slug }: { slug: string }) => {
 	}
 
 	React.useEffect(getProject, [slug])
-
 	if (!slug || !project) {
 		return null
 	}
@@ -31,7 +30,11 @@ const ProjectSection = ({ slug }: { slug: string }) => {
 					<br />
 					<p>{project.description}</p>
 				</S.TextDiv>
-				<S.SlidesDiv>a</S.SlidesDiv>
+				<S.SlidesDiv>
+					{project.images.map((slideImage, index) => {
+						return <img key={index} src={slideImage.url} alt={slideImage.alt} />
+					})}
+				</S.SlidesDiv>
 			</S.ContentDiv>
 		</S.Wrapper>
 	)
