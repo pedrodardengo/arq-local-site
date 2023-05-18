@@ -3,32 +3,44 @@ import THEME from '@/styles/theme'
 
 export const Wrapper = styled.div`
 	width: 100%;
-	min-height: calc(100vh - 64px);
+	height: calc(100vh - 64px);
 	display: flex;
 	justify-content: center;
-	align-items: center;
-	overflow: hidden;
 `
 export const ContentDiv = styled.div`
+	margin-top: 5vh;
+	margin-bottom: 5vh;
 	width: 75%;
 	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	gap: 2%;
+	flex-direction: row-reverse;
+	gap: 4%;
+	@media (max-width: ${THEME.screenSize.tablet}px) {
+		flex-direction: column;
+	}
 `
 export const TextDiv = styled.div`
 	padding-right: 20px;
-	width: 24%;
-	height: 65vh;
+	width: 27%;
 	overflow-y: scroll;
+	height: auto;
+	max-height: 75vh;
 	> h2 {
+		height: auto;
 		font-weight: ${THEME.fontWeight.semiBold};
+	}
+	@media (max-width: ${THEME.screenSize.tablet}px) {
+		width: 100%;
 	}
 `
 
 export const SlidesDiv = styled.div`
-	width: 74%;
-	height: 100%;
-	background-color: ${THEME.colors.accentColor};
+	width: 69%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	height: 75vh;
+	@media (max-width: ${THEME.screenSize.tablet}px) {
+		height: auto;
+		width: 100%;
+	}
 `
