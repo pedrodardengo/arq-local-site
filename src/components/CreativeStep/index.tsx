@@ -13,13 +13,17 @@ const CreativeStep = ({
 	stepImageSrc: string
 	children: React.ReactNode
 }) => {
+	const [isHovered, setIsHovered] = React.useState<boolean>(false)
 	return (
 		<S.Wrapper>
-			<S.HeaderDiv>
+			<S.HeaderDiv isImageHovered={isHovered}>
 				<S.NumberHeader>{stepNumber}</S.NumberHeader>
-				<S.TitleHeader>{stepTitle}</S.TitleHeader>
+				<S.TitleHeader isImageHovered={isHovered}>{stepTitle}</S.TitleHeader>
 			</S.HeaderDiv>
-			<S.ImageDiv>
+			<S.ImageDiv
+				onMouseEnter={() => setIsHovered(true)}
+				onMouseLeave={() => setIsHovered(false)}
+			>
 				<NextImage
 					src={stepImageSrc}
 					alt={`Passo criativo ${stepNumber}: ${stepTitle}`}

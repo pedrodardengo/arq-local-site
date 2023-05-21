@@ -31,13 +31,34 @@ export const TextDiv = styled.div`
 	@media (max-width: ${THEME.screenSize.tablet}px) {
 		width: 100%;
 	}
+
+	::-webkit-scrollbar {
+		width: 10px;
+		color: transparent;
+	}
+
+	::-webkit-scrollbar-track {
+		background: linear-gradient(
+			to right,
+			white calc(50% - 0.5px),
+			black,
+			white calc(50% + 0.5px)
+		);
+		background-size: 1px 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: black;
+	}
 `
 
 export const SlidesDiv = styled.div`
 	width: 69%;
 	display: flex;
 	justify-content: flex-start;
-	align-items: center;
+	align-items: flex-end;
 	height: 75vh;
 	@media (max-width: ${THEME.screenSize.tablet}px) {
 		height: auto;

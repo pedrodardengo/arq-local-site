@@ -10,9 +10,9 @@ const StatementSection3 = () => {
 
 	React.useEffect(() => {
 		if (windowDimension.width < THEME.screenSize.tablet) {
-			setStatement(<>Estamos aqui para te ajudar a concretizar uma ideia.</>)
+			setStatement(<>Estamos aqui para te ajudar a concretizar uma ideia</>)
 		} else {
-			setStatement(<>Estamos aqui para te ajudar a concretizar uma ideia.</>)
+			setStatement(<>Estamos aqui para te ajudar a concretizar uma ideia</>)
 		}
 	}, [windowDimension])
 

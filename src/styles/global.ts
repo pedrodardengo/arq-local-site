@@ -15,23 +15,6 @@ const GlobalStyles = createGlobalStyle`
       -webkit-background-clip: padding-box;
       background-clip: padding-box;
 
-      ::-webkit-scrollbar {
-        width: 10px;
-				color: transparent;
-      }
-
-      ::-webkit-scrollbar-track {
-				background: linear-gradient(to right, white calc(50% - 0.5px), black, white calc(50% + 0.5px));
-				background-size: 1px 100%;
-				background-position: center;
-				background-repeat: no-repeat;
-      }
-
-      ::-webkit-scrollbar-thumb {
-        background: black;
-      }
-
-
       p {
         font-weight: ${THEME.fontWeight.regular};
         font-size: ${THEME.fontSize.textDesktop}px;

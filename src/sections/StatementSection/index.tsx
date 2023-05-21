@@ -13,14 +13,14 @@ const StatementSection = () => {
 			setStatement(
 				<>
 					Criamos projetos autênticos para pessoas e empresas que buscam
-					melhorar vidas e cidades.
+					melhorar vidas e cidades
 				</>
 			)
 		} else {
 			setStatement(
 				<>
 					Criamos projetos autênticos para pessoas e empresas que buscam
-					melhorar vidas e cidades.
+					melhorar vidas e cidades
 				</>
 			)
 		}

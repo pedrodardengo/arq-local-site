@@ -20,7 +20,7 @@ const OurMethodSection = () => {
 				<S.StepsGridDiv>
 					<CreativeStep
 						stepNumber={1}
-						stepTitle={'demanda'}
+						stepTitle={'DEMANDA'}
 						stepImageSrc={'/img/al-process-01.svg'}
 					>
 						O projeto sempre é iniciado a partir da demanda trazida pelo cliente
@@ -29,7 +29,7 @@ const OurMethodSection = () => {
 					</CreativeStep>
 					<CreativeStep
 						stepNumber={2}
-						stepTitle={'contexto'}
+						stepTitle={'CONTEXTO'}
 						stepImageSrc={'/img/al-process-02.svg'}
 					>
 						Em seguida, partimos para a análise do local e do contexto em torno
@@ -39,7 +39,7 @@ const OurMethodSection = () => {
 					</CreativeStep>
 					<CreativeStep
 						stepNumber={3}
-						stepTitle={'criação'}
+						stepTitle={'CRIAÇÃO'}
 						stepImageSrc={'/img/al-process-03.svg'}
 					>
 						Então é iniciado o nosso processo de criação, um momento de mergulho
@@ -49,7 +49,7 @@ const OurMethodSection = () => {
 					</CreativeStep>
 					<CreativeStep
 						stepNumber={4}
-						stepTitle={'projeto'}
+						stepTitle={'PROJETO'}
 						stepImageSrc={'/img/al-process-04.svg'}
 					>
 						O desenvolvimento do projeto se dá em etapas, de modo que ao término

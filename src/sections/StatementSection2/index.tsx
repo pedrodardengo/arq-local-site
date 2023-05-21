@@ -14,14 +14,14 @@ const StatementSection2 = () => {
 				<>
 					Prática criativa <br />
 					comprometida <br />
-					com o contexto.
+					com o contexto
 				</>
 			)
 		} else {
 			setStatement(
 				<>
 					Prática criativa comprometida <br />
-					com o contexto.
+					com o contexto
 				</>
 			)
 		}

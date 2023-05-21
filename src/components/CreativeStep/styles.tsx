@@ -5,17 +5,25 @@ export const Wrapper = styled.div`
 	position: relative;
 `
 
-export const HeaderDiv = styled.div`
+export const HeaderDiv = styled.div<{ isImageHovered: boolean }>`
 	margin-bottom: 10px;
 	margin-left: 8px;
 	z-index: 1;
+	color: ${(props) =>
+		props.isImageHovered
+			? THEME.colors.accentColor
+			: THEME.colors.primaryColor};
 `
 
-export const NumberHeader = styled.h2`
-	font-weight: ${THEME.fontWeight.semiBold};
-`
-export const TitleHeader = styled.h2`
-	font-weight: ${THEME.fontWeight.semiBold};
+export const NumberHeader = styled.p``
+export const TitleHeader = styled.div<{ isImageHovered: boolean }>`
+	display: inline-block;
+	padding-bottom: 8px;
+	border-bottom: 1px solid
+		${(props) =>
+			props.isImageHovered
+				? THEME.colors.accentColor
+				: THEME.colors.primaryColor};
 `
 
 export const ImageDiv = styled.div`
