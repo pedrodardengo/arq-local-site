@@ -25,7 +25,7 @@ const PhilosophySection = () => {
 				words={[completeText]}
 				loop={1}
 				cursor={false}
-				typeSpeed={70}
+				typeSpeed={35}
 				onLoopDone={() => setHasTypeWritterAnimatedExecuted(true)}
 			/>
 		)

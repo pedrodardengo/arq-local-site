@@ -3,55 +3,44 @@ import THEME from '@/styles/theme'
 
 export const Wrapper = styled.div`
 	position: relative;
+	cursor: pointer;
 `
 
-export const HeaderDiv = styled.div<{ isImageHovered: boolean }>`
+export const HeaderDiv = styled.div<{ isHovered: boolean }>`
 	margin-bottom: 10px;
 	margin-left: 8px;
 	z-index: 1;
 	color: ${(props) =>
-		props.isImageHovered
-			? THEME.colors.accentColor
-			: THEME.colors.primaryColor};
+		props.isHovered ? THEME.colors.accentColor : THEME.colors.primaryColor};
 `
 
 export const NumberHeader = styled.p``
-export const TitleHeader = styled.div<{ isImageHovered: boolean }>`
+export const TitleHeader = styled.div<{ isHovered: boolean }>`
 	display: inline-block;
 	padding-bottom: 8px;
 	border-bottom: 1px solid
 		${(props) =>
-			props.isImageHovered
-				? THEME.colors.accentColor
-				: THEME.colors.primaryColor};
+			props.isHovered ? THEME.colors.accentColor : THEME.colors.primaryColor};
 `
 
-export const ImageDiv = styled.div`
+export const ImageDiv = styled.div<{ isHovered: boolean }>`
 	position: relative;
 	display: flex;
 	clip-path: polygon(0 0, 100% 0, 100% 1000%, 0 1000%);
 	justify-content: center;
 	align-items: flex-start;
 	transition: z-index 2s ease;
-	z-index: 2;
+	z-index: ${(props) => (props.isHovered ? '2' : '20')};
+
 	> img {
 		width: 70%;
 		height: 70%;
 		pointer-events: none;
 	}
 
-	&:hover {
-		z-index: 20;
-		> div {
-			z-index: 20;
-			opacity: 1;
-			transform: translateY(100%);
-		}
-	}
-
 	> div {
 		position: absolute;
-		z-index: 1;
+		z-index: ${(props) => (props.isHovered ? '1' : '20')};
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -63,5 +52,6 @@ export const ImageDiv = styled.div`
 		bottom: 101%;
 		pointer-events: none;
 		transition: all 0.6s ease;
+		${(props) => (props.isHovered ? 'transform: translateY(100%);' : '')};
 	}
 `

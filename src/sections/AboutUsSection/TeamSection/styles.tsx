@@ -34,6 +34,7 @@ export const ProfilesDiv = styled.div`
 	justify-content: center;
 	gap: min(10%, 60px);
 	width: 100%;
+	cursor: pointer;
 
 	> div {
 		display: flex;

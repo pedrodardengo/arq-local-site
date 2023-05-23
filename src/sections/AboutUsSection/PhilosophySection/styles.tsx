@@ -25,7 +25,7 @@ export const TextDiv = styled.div`
 export const ImagesWrapper = styled.div`
 	position: relative;
 	margin-top: 256px;
-	margin-bottom: 132px;
+	margin-bottom: 196px;
 	width: 40%;
 	display: flex;
 	align-items: center;
