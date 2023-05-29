@@ -30,7 +30,7 @@ export const ImageDiv = styled.div<{ isHovered: boolean }>`
 	justify-content: center;
 	align-items: flex-start;
 	transition: z-index 2s ease;
-	z-index: ${(props) => (props.isHovered ? '2' : '20')};
+	z-index: ${(props) => (props.isHovered ? '20' : '1')};
 
 	> img {
 		width: 70%;

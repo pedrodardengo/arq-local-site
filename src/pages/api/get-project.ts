@@ -13,16 +13,14 @@ export default async function handler(
 		any,
 		any
 	>
+	console.log(response.data.description)
 	const project: ProjectDTO = {
 		title: response.data.title[0].text,
-		description: response.data.description[0].text,
+		description: response.data.description.map((d: { text: string }) => d.text),
 		thumbnail: response.data.thumbnail,
 		images: response.data.images.map(
 			(imageObject: { image: { alt: string; url: string } }) => {
-				return {
-					alt: imageObject.image.alt,
-					url: imageObject.image.url
-				}
+				return imageObject.image
 			}
 		)
 	}

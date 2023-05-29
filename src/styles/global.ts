@@ -80,9 +80,7 @@ const GlobalStyles = createGlobalStyle`
 		}
 	}
 
-	html, body, #__next {
-		height: 100%;
-	}
+	html, body, #__next {}
 
 	body {
 		font-family: 'Source Sans Pro', sans-serif;

@@ -12,11 +12,11 @@ export default async function handler(
 	const texts_list: TextDTO[] = [
 		{
 			title: response.data.title_1[0].text,
-			text: response.data.text_1[0].text
+			text: response.data.text_1.map((d: { text: string }) => d.text)
 		},
 		{
 			title: response.data.title_2[0].text,
-			text: response.data.text_2[0].text
+			text: response.data.text_2.map((d: { text: string }) => d.text)
 		}
 	]
 	return res.status(200).json(texts_list)

@@ -25,22 +25,14 @@ const ProjectSection = ({ slug }: { slug: string }) => {
 
 	return (
 		<S.Wrapper>
-			<S.ContentDiv>
-				<S.SlidesDiv>
-					<InteractiveSlides>
-						{project.images.map((slideImage, index) => {
-							return (
-								<img key={index} src={slideImage.url} alt={slideImage.alt} />
-							)
-						})}
-					</InteractiveSlides>
-				</S.SlidesDiv>
-				<S.TextDiv>
-					<h2>{project.title}</h2>
-					<br />
-					<p>{project.description}</p>
-				</S.TextDiv>
-			</S.ContentDiv>
+			<InteractiveSlides
+				title={project.title}
+				description={project.description}
+			>
+				{project.images.map((slideImage, index) => {
+					return <img key={index} src={slideImage.url} alt={slideImage.alt} />
+				})}
+			</InteractiveSlides>
 		</S.Wrapper>
 	)
 }

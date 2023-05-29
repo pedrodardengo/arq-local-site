@@ -16,6 +16,7 @@ const TeamSection = () => {
 
 	React.useEffect(() => {
 		getProfiles()
+		console.log(profiles)
 	}, [])
 
 	function setProfileImageOpacity(imageIndex: number) {
@@ -59,17 +60,22 @@ const TeamSection = () => {
 				</S.ProfilesDiv>
 				<S.ProfileDescriptionDiv>
 					{profiles.map((profile, index) => {
-						return (
-							<p
-								key={index}
-								style={{
-									position: index == 0 ? 'relative' : 'absolute',
-									opacity: profileHoveredIndex == index ? 1 : 0
-								}}
-							>
-								{profile.description.text}
-							</p>
-						)
+						return profile.description.text.map((text: string, i: number) => {
+							return (
+								<>
+									<p
+										key={i}
+										style={{
+											position: index == 0 ? 'relative' : 'absolute',
+											opacity: profileHoveredIndex == index ? 1 : 0
+										}}
+									>
+										{text}
+									</p>
+									{i + 1 != profile.description.text.length ? <br /> : ''}
+								</>
+							)
+						})
 					})}
 				</S.ProfileDescriptionDiv>
 			</S.Content>

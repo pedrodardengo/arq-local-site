@@ -1,42 +1,15 @@
 import React, { ReactElement } from 'react'
-import styled from 'styled-components'
-import THEME from '@/styles/theme'
+import * as S from './styles'
 
-const ButtonContainer = styled.div`
-	position: absolute;
-	top: 50%;
-	right: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-`
-
-const Button = styled.button`
-	margin: 0 5px;
-	padding: 5px 10px;
-	font-size: 16px;
-	z-index: 10;
-`
-
-const Container = styled.div`
-	position: relative;
-	@media (max-width: ${THEME.screenSize.tablet}px) {
-		justify-content: flex-start;
-	}
-`
-
-const SlideImage = styled.img<{ active: boolean }>`
-	max-width: 100%;
-	max-height: 75vh;
-	object-fit: contain;
-	display: ${(props) => (props.active ? 'block' : 'none')};
-	transition: opacity 2s ease-in-out;
-	@media (max-width: ${THEME.screenSize.tablet}px) {
-		max-height: 55vh;
-	}
-`
-
-const InteractiveSlides = ({ children }: { children: ReactElement[] }) => {
+const InteractiveSlides = ({
+	title,
+	description,
+	children
+}: {
+	title: string
+	description: string[]
+	children: ReactElement[]
+}) => {
 	const [currentSlideIndex, setCurrentSlideIndex] = React.useState(0)
 	const totalSlides = React.Children.count(children)
 
@@ -59,29 +32,41 @@ const InteractiveSlides = ({ children }: { children: ReactElement[] }) => {
 	}
 
 	return (
-		<Container>
-			{React.Children.map(children, (child, index) => {
-				return (
-					<SlideImage
-						src={child.props.src}
-						alt={child.props.alt}
-						active={currentSlideIndex == index}
-					/>
-				)
-			})}
-
-			<ButtonContainer>
-				<Button onClick={goToPreviousSlide} disabled={currentSlideIndex === 0}>
-					Previous
-				</Button>
-				<Button
-					onClick={goToNextSlide}
-					disabled={currentSlideIndex === totalSlides - 1}
-				>
-					Next
-				</Button>
-			</ButtonContainer>
-		</Container>
+		<S.Wrapper>
+			<S.TextDiv>
+				<h2>{title}</h2>
+				<br />
+				{description.map((text: string, index: number) => {
+					return (
+						<>
+							<p key={index}>{text}</p>
+							{index + 1 != description.length ? <br /> : ''}
+						</>
+					)
+				})}
+			</S.TextDiv>
+			<S.SlideDiv>
+				{React.Children.map(children, (child, index) => {
+					return (
+						<S.SlideImage
+							src={child.props.src}
+							alt={child.props.alt}
+							active={currentSlideIndex == index}
+						></S.SlideImage>
+					)
+				})}
+				<S.ButtonContainer>
+					<S.Button
+						onClick={goToPreviousSlide}
+						disabled={currentSlideIndex === 0}
+					></S.Button>
+					<S.Button
+						onClick={goToNextSlide}
+						disabled={currentSlideIndex === totalSlides - 1}
+					></S.Button>
+				</S.ButtonContainer>
+			</S.SlideDiv>
+		</S.Wrapper>
 	)
 }
 export default InteractiveSlides

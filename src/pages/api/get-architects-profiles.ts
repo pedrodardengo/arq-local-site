@@ -15,14 +15,14 @@ export default async function handler(
 			image: body.image_1,
 			description: {
 				title: body.name_1[0].text,
-				text: body.description_1[0].text
+				text: body.description_1.map((d: { text: string }) => d.text)
 			}
 		},
 		{
 			image: body.image_2,
 			description: {
 				title: body.name_2[0].text,
-				text: body.description_2[0].text
+				text: body.description_2.map((d: { text: string }) => d.text)
 			}
 		}
 	]
