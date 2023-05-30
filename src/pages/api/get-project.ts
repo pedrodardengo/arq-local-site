@@ -13,7 +13,6 @@ export default async function handler(
 		any,
 		any
 	>
-	console.log(response.data.description)
 	const project: ProjectDTO = {
 		title: response.data.title[0].text,
 		description: response.data.description.map((d: { text: string }) => d.text),

@@ -28,11 +28,8 @@ const ProjectSection = ({ slug }: { slug: string }) => {
 			<InteractiveSlides
 				title={project.title}
 				description={project.description}
-			>
-				{project.images.map((slideImage, index) => {
-					return <img key={index} src={slideImage.url} alt={slideImage.alt} />
-				})}
-			</InteractiveSlides>
+				images={project.images}
+			/>
 		</S.Wrapper>
 	)
 }

@@ -3,8 +3,12 @@ import { useEffect } from 'react'
 export function useOnEventListener(
 	handler: () => void,
 	event: string,
-	useOnceOnStart = false
+	useOnceOnStart = false,
+	dependencies: any[] = []
 ) {
+	const effectDependencies = [event, handler, useOnceOnStart].concat(
+		dependencies
+	)
 	useEffect(() => {
 		if (useOnceOnStart) {
 			handler()
@@ -13,5 +17,5 @@ export function useOnEventListener(
 		return () => {
 			window.removeEventListener(event, handler)
 		}
-	}, [event, handler, useOnceOnStart])
+	}, effectDependencies)
 }
