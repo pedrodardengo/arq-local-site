@@ -10,7 +10,11 @@ const ClientsSection = () => {
 	const [clientLogos, setClientLogos] = React.useState<ImageDTO[]>([
 		{
 			url: 'img/al-logo-5.svg',
-			alt: ''
+			alt: '',
+			dimensions: {
+				height: 100,
+				width: 100
+			}
 		}
 	])
 
