@@ -1,6 +1,7 @@
 import React from 'react'
 import * as S from './styles'
 import { Dimensions, ImageDTO } from '@/types/ImageDTO'
+import { BsChevronLeft, BsChevronRight } from 'react-icons/bs'
 
 const InteractiveSlides = ({
 	title,
@@ -77,11 +78,17 @@ const InteractiveSlides = ({
 					<S.Button
 						onClick={goToPreviousSlide}
 						disabled={currentSlideIndex === 0}
-					></S.Button>
+					/>
+					<S.LeftArrow>
+						<BsChevronLeft />
+					</S.LeftArrow>
+					<S.RightArrow>
+						<BsChevronRight />
+					</S.RightArrow>
 					<S.Button
 						onClick={goToNextSlide}
 						disabled={currentSlideIndex === images.length - 1}
-					></S.Button>
+					/>
 				</S.ButtonContainer>
 			</S.SlideDiv>
 		</S.Wrapper>

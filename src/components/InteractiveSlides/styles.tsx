@@ -50,9 +50,23 @@ export const Button = styled.button`
 	z-index: 10;
 	height: 100%;
 	width: 50%;
-	border: 3px solid red;
+	border: none;
 	background-color: transparent;
 `
+
+export const LeftArrow = styled.div`
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+	color: white;
+`
+export const RightArrow = styled.div`
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	color: white;
+`
+
 export const SlideImage = styled.img<{ active: boolean }>`
 	max-height: 100%;
 	@media (max-width: 1400px) {
