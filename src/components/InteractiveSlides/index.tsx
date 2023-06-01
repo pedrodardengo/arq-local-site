@@ -1,7 +1,6 @@
 import React from 'react'
 import * as S from './styles'
-import { useOnEventListener } from '@/utils/useOnEventListener'
-import { ImageDTO } from '@/types/ImageDTO'
+import { Dimensions, ImageDTO } from '@/types/ImageDTO'
 
 const InteractiveSlides = ({
 	title,
@@ -13,15 +12,27 @@ const InteractiveSlides = ({
 	images: ImageDTO[]
 }) => {
 	const [currentSlideIndex, setCurrentSlideIndex] = React.useState<number>(0)
-	const [slideDivHeight, setSlideDivHeight] = React.useState<number>(200)
+	const [slideDivDimensions, setSlideDivDimensions] =
+		React.useState<Dimensions>({
+			height: 200,
+			width: 200
+		})
 	const slideDivRef = React.useRef<HTMLDivElement>(null)
-	function getSlideDivHeight() {
+	function getSlideDivDimensions() {
 		if (slideDivRef.current) {
-			setSlideDivHeight(slideDivRef.current.getBoundingClientRect().height)
+			setSlideDivDimensions(slideDivRef.current.getBoundingClientRect())
 		}
 	}
-	useOnEventListener(getSlideDivHeight, 'resize', true, [currentSlideIndex])
+	React.useEffect(() => {
+		const resizeObserver = new ResizeObserver(getSlideDivDimensions)
+		if (slideDivRef.current) {
+			resizeObserver.observe(slideDivRef.current)
+		}
 
+		return () => {
+			resizeObserver.disconnect()
+		}
+	}, [])
 	const goToPreviousSlide = () => {
 		setCurrentSlideIndex((prevIndex) => Math.max(prevIndex - 1, 0))
 	}
@@ -34,7 +45,7 @@ const InteractiveSlides = ({
 
 	return (
 		<S.Wrapper>
-			<S.TextDiv height={slideDivHeight}>
+			<S.TextDiv height={slideDivDimensions.height}>
 				<h2>{title}</h2>
 				<br />
 				{description.map((text: string, index: number) => {
@@ -46,7 +57,11 @@ const InteractiveSlides = ({
 					)
 				})}
 			</S.TextDiv>
-			<S.SlideDiv ref={slideDivRef}>
+			<S.SlideDiv
+				ref={slideDivRef}
+				slideDimensions={slideDivDimensions}
+				imageDimensions={images[currentSlideIndex].dimensions}
+			>
 				{images.map((image: ImageDTO, index: number) => {
 					return (
 						<S.SlideImage
@@ -54,7 +69,7 @@ const InteractiveSlides = ({
 							src={image.url}
 							alt={image.alt}
 							active={currentSlideIndex == index}
-							onLoad={getSlideDivHeight}
+							onLoad={getSlideDivDimensions}
 						/>
 					)
 				})}

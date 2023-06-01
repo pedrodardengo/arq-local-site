@@ -1,35 +1,41 @@
 import styled from 'styled-components'
 import THEME from '@/styles/theme'
+import { Dimensions } from '@/types/ImageDTO'
 
 export const Wrapper = styled.div`
 	width: 75%;
-	height: calc(100vh - 128px);
+	height: calc(100vh - 96px);
 	display: flex;
 	align-items: center;
 	flex-direction: row;
 	gap: 35px;
 	@media (max-width: 1400px) {
 		flex-direction: column-reverse;
-		align-items: flex-start;
 	}
 `
 
-export const SlideDiv = styled.div`
-	max-width: 73%;
+export const SlideDiv = styled.div<{
+	imageDimensions: Dimensions
+	slideDimensions: Dimensions
+}>`
+	width: calc(100vw * 0.75 * 0.73 - 35px);
 	position: relative;
-	height: clamp(
-		calc((100vw * 0.75 * 0.73 - 35px) * 1000 / 1487),
-		calc((100vw * 0.75 * 0.73 - 35px) * 1000 / 1487),
-		calc(100vh - 128px)
-	);
-	max-height: 100%;
+	aspect-ratio: 1.487;
+	max-height: calc(100vh - 96px);
 	overflow: hidden;
 	display: flex;
-	justify-content: center;
+	align-items: flex-end;
+	justify-content: ${(props) =>
+		props.imageDimensions.width / props.imageDimensions.height <
+		props.slideDimensions.width / props.slideDimensions.height
+			? 'flex-start'
+			: 'center'};
 	@media (max-width: 1400px) {
+		justify-content: flex-start;
+		aspect-ratio: 1.487;
 		height: auto;
-		max-width: 100%;
-		overflow: visible;
+		width: 100%;
+		max-height: 55vh;
 	}
 `
 
@@ -44,13 +50,12 @@ export const Button = styled.button`
 	z-index: 10;
 	height: 100%;
 	width: 50%;
-	border: none;
+	border: 3px solid red;
 	background-color: transparent;
 `
 export const SlideImage = styled.img<{ active: boolean }>`
 	max-height: 100%;
 	@media (max-width: 1400px) {
-		max-height: 55vh;
 		max-width: 100%;
 	}
 	object-fit: contain;
@@ -63,13 +68,14 @@ export const TextDiv = styled.div<{ height: number }>`
 	width: 27%;
 	height: ${(props) => props.height}px;
 	overflow-y: scroll;
-	max-height: calc(100vh - 128px);
+	max-height: calc(100vh - 96px);
+	flex: 1;
 	> h2 {
 		font-weight: ${THEME.fontWeight.semiBold};
 	}
 	@media (max-width: 1400px) {
 		width: 100%;
-		height: 100%;
+		min-height: 30vh;
 	}
 
 	::-webkit-scrollbar {
