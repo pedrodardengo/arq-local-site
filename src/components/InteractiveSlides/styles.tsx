@@ -90,6 +90,7 @@ export const TextDiv = styled.div<{ height: number }>`
 	@media (max-width: 1400px) {
 		width: 100%;
 		min-height: 30vh;
+		padding-right: 8px;
 	}
 
 	::-webkit-scrollbar {
