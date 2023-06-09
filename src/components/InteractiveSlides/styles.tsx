@@ -55,19 +55,40 @@ export const Button = styled.button`
 	border: none;
 	background-color: transparent;
 	cursor: pointer;
-`
 
-export const LeftArrow = styled.div`
-	position: absolute;
-	left: 10px;
-	bottom: 10px;
-	color: white;
+	&:hover {
+		> div {
+			background-color: ${(props) =>
+				props.disabled ? 'rgba(30, 30, 30, 0.1)' : 'rgba(30, 30, 30, 0.8)'};
+		}
+	}
 `
-export const RightArrow = styled.div`
+const ArrowBox = styled.div<{ disabled: boolean }>`
 	position: absolute;
-	right: 10px;
 	bottom: 10px;
-	color: white;
+	color: ${THEME.colors.secondaryColor};
+	border-radius: 5px;
+	background-color: ${(props) =>
+		props.disabled ? 'rgba(30, 30, 30, 0.1)' : 'rgba(30, 30, 30, 0.3)'};
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 8px;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+	&:hover {
+		background-color: ${(props) =>
+			props.disabled ? 'rgba(30, 30, 30, 0.1)' : 'rgba(30, 30, 30, 0.8)'};
+	}
+	> svg {
+		opacity: ${(props) => (props.disabled ? '0.3' : '1')};
+	}
+`
+export const LeftArrow = styled(ArrowBox)`
+	left: 10px;
+`
+export const RightArrow = styled(ArrowBox)`
+	right: 10px;
 `
 
 export const SlideImage = styled.img<{
@@ -86,6 +107,10 @@ export const SlideImage = styled.img<{
 	object-fit: contain;
 	display: ${(props) => (props.active ? 'block' : 'none')};
 	transition: opacity 2s ease-in-out;
+	::selection {
+		background-color: transparent;
+		color: transparent;
+	}
 `
 
 export const TextDiv = styled.div`

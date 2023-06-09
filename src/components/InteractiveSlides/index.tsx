@@ -54,17 +54,25 @@ const InteractiveSlides = ({
 					<S.Button
 						onClick={goToPreviousSlide}
 						disabled={currentSlideIndex === 0}
-					/>
-					<S.LeftArrow>
-						<BsChevronLeft />
-					</S.LeftArrow>
-					<S.RightArrow>
-						<BsChevronRight />
-					</S.RightArrow>
+					>
+						<S.LeftArrow
+							onClick={goToPreviousSlide}
+							disabled={currentSlideIndex === 0}
+						>
+							<BsChevronLeft onClick={goToPreviousSlide} />
+						</S.LeftArrow>
+					</S.Button>
 					<S.Button
 						onClick={goToNextSlide}
 						disabled={currentSlideIndex === images.length - 1}
-					/>
+					>
+						<S.RightArrow
+							onClick={goToNextSlide}
+							disabled={currentSlideIndex === images.length - 1}
+						>
+							<BsChevronRight onClick={goToNextSlide} />
+						</S.RightArrow>
+					</S.Button>
 				</S.ButtonContainer>
 			</S.SlideDiv>
 		</S.Wrapper>
