@@ -35,6 +35,7 @@ const NavBar = () => {
 			<DropDownBurgerButton
 				iconColor={THEME.colors.primaryColor}
 				iconSize={windowWidth < THEME.screenSize.mobile ? 25 : 30}
+				initialPosition={'below'}
 			/>
 		)
 	}

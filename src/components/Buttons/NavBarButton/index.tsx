@@ -25,7 +25,14 @@ const NavBarButton = ({
 	const isOnHomePage = router.pathname === '/'
 	const onClickHandler = isOnHomePage
 		? () => scrollToRef(sectionRef)
-		: () => router.push(`/#${sectionRef}`)
+		: () => {
+				router.push(`/#${sectionRef}`).then(() =>
+					window.scrollTo({
+						top: window.scrollY - 64,
+						behavior: 'smooth'
+					})
+				)
+		  }
 
 	return (
 		<S.Wrapper

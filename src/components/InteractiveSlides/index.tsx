@@ -1,6 +1,6 @@
 import React from 'react'
 import * as S from './styles'
-import { Dimensions, ImageDTO } from '@/types/ImageDTO'
+import { ImageDTO } from '@/types/ImageDTO'
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs'
 
 const InteractiveSlides = ({
@@ -13,27 +13,7 @@ const InteractiveSlides = ({
 	images: ImageDTO[]
 }) => {
 	const [currentSlideIndex, setCurrentSlideIndex] = React.useState<number>(0)
-	const [slideDivDimensions, setSlideDivDimensions] =
-		React.useState<Dimensions>({
-			height: 200,
-			width: 200
-		})
-	const slideDivRef = React.useRef<HTMLDivElement>(null)
-	function getSlideDivDimensions() {
-		if (slideDivRef.current) {
-			setSlideDivDimensions(slideDivRef.current.getBoundingClientRect())
-		}
-	}
-	React.useEffect(() => {
-		const resizeObserver = new ResizeObserver(getSlideDivDimensions)
-		if (slideDivRef.current) {
-			resizeObserver.observe(slideDivRef.current)
-		}
 
-		return () => {
-			resizeObserver.disconnect()
-		}
-	}, [])
 	const goToPreviousSlide = () => {
 		setCurrentSlideIndex((prevIndex) => Math.max(prevIndex - 1, 0))
 	}
@@ -46,7 +26,7 @@ const InteractiveSlides = ({
 
 	return (
 		<S.Wrapper>
-			<S.TextDiv height={slideDivDimensions.height}>
+			<S.TextDiv>
 				<h2>{title}</h2>
 				<br />
 				{description.map((text: string, index: number) => {
@@ -58,11 +38,7 @@ const InteractiveSlides = ({
 					)
 				})}
 			</S.TextDiv>
-			<S.SlideDiv
-				ref={slideDivRef}
-				slideDimensions={slideDivDimensions}
-				imageDimensions={images[currentSlideIndex].dimensions}
-			>
+			<S.SlideDiv imageDimensions={images[currentSlideIndex].dimensions}>
 				{images.map((image: ImageDTO, index: number) => {
 					return (
 						<S.SlideImage
@@ -70,7 +46,7 @@ const InteractiveSlides = ({
 							src={image.url}
 							alt={image.alt}
 							active={currentSlideIndex == index}
-							onLoad={getSlideDivDimensions}
+							imageDimensions={image.dimensions}
 						/>
 					)
 				})}

@@ -86,7 +86,22 @@ const GlobalStyles = createGlobalStyle`
 		font-family: 'Source Sans Pro', sans-serif;
 		overflow-x: hidden;
 	}
+	
+	.scrollbar-track {
+		background: linear-gradient(
+			to right,
+			white calc(50% - 0.5px),
+			lightgray,
+			white calc(50% + 0.5px)
+		);
+		background-size: 1px 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
 
+	.scrollbar-thumb {
+		background: darkgrey;
+	}
 `
 
 export default GlobalStyles

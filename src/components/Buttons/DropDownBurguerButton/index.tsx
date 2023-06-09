@@ -8,19 +8,23 @@ import NavBarButton from '@/components/Buttons/NavBarButton'
 export const DropDownBurgerButton = ({
 	style,
 	iconColor = THEME.colors.primaryColor,
-	iconSize = 35
+	iconSize = 35,
+	initialPosition = 'above'
 }: {
 	style?: React.CSSProperties
 	iconColor?: string
 	iconSize?: number
+	initialPosition?: 'above' | 'below'
 }) => {
 	const [isMenuOpen, setMenuOpen] = React.useState(false)
 	const dropdownRef = React.useRef<HTMLDivElement>(null)
 	const [renderPosition, setRenderPosition] = React.useState<'above' | 'below'>(
-		'above'
+		initialPosition
 	)
 	const [elementsColor, setElementsColor] = React.useState(
-		THEME.colors.secondaryColor
+		initialPosition == 'above'
+			? THEME.colors.secondaryColor
+			: THEME.colors.primaryColor
 	)
 	function OnClickHandler() {
 		setMenuOpen(!isMenuOpen)

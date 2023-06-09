@@ -12,11 +12,14 @@ export const Wrapper = styled.div`
 	@media (max-width: 1400px) {
 		flex-direction: column-reverse;
 	}
+
+	@media (max-width: 500px) {
+		width: 85%;
+	}
 `
 
 export const SlideDiv = styled.div<{
 	imageDimensions: Dimensions
-	slideDimensions: Dimensions
 }>`
 	width: calc(100vw * 0.75 * 0.73 - 35px);
 	position: relative;
@@ -26,8 +29,7 @@ export const SlideDiv = styled.div<{
 	display: flex;
 	align-items: flex-end;
 	justify-content: ${(props) =>
-		props.imageDimensions.width / props.imageDimensions.height <
-		props.slideDimensions.width / props.slideDimensions.height
+		props.imageDimensions.width / props.imageDimensions.height < 1.487
 			? 'flex-start'
 			: 'center'};
 	@media (max-width: 1400px) {
@@ -52,6 +54,7 @@ export const Button = styled.button`
 	width: 50%;
 	border: none;
 	background-color: transparent;
+	cursor: pointer;
 `
 
 export const LeftArrow = styled.div`
@@ -67,20 +70,28 @@ export const RightArrow = styled.div`
 	color: white;
 `
 
-export const SlideImage = styled.img<{ active: boolean }>`
+export const SlideImage = styled.img<{
+	active: boolean
+	imageDimensions: Dimensions
+}>`
 	max-height: 100%;
+	width: ${(props) =>
+		props.imageDimensions.width / props.imageDimensions.height > 1.487
+			? '100%'
+			: 'auto'};
 	@media (max-width: 1400px) {
 		max-width: 100%;
+		width: auto;
 	}
 	object-fit: contain;
 	display: ${(props) => (props.active ? 'block' : 'none')};
 	transition: opacity 2s ease-in-out;
 `
 
-export const TextDiv = styled.div<{ height: number }>`
+export const TextDiv = styled.div`
 	padding-right: 35px;
 	width: 27%;
-	height: ${(props) => props.height}px;
+	height: min(calc((100vw * 0.75 * 0.73 - 35px) / 1.487), calc(100vh - 96px));
 	overflow-y: scroll;
 	max-height: calc(100vh - 96px);
 	flex: 1;
@@ -91,6 +102,10 @@ export const TextDiv = styled.div<{ height: number }>`
 		width: 100%;
 		min-height: 30vh;
 		padding-right: 8px;
+	}
+
+	@media (max-width: 500px) {
+		height: min(calc((100vw * 0.85) / 1.487), calc(100vh - 96px));
 	}
 
 	::-webkit-scrollbar {
