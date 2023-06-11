@@ -89,6 +89,30 @@ export const RightArrow = styled(ArrowBox)`
 	right: 10px;
 `
 
+export const SlideIndicator = styled.div<{
+	offset: number
+	active: boolean
+}>`
+	position: absolute;
+	bottom: 15px;
+	left: calc(50% + ${(props) => props.offset}px);
+	background-color: ${(props) =>
+		props.active ? THEME.colors.accentColor : THEME.colors.secondaryColor};
+	height: 10px;
+	width: 10px;
+	border-radius: 10px;
+	border: 1px solid ${THEME.colors.accentColor};
+	cursor: pointer;
+	transition: all 0.2s ease;
+	&:hover {
+		height: 12px;
+		width: 12px;
+		bottom: 14px;
+		left: calc(50% + ${(props) => props.offset - 1}px);
+		border-radius: 12px;
+	}
+`
+
 export const SlideImage = styled.img<{
 	active: boolean
 	imageDimensions: Dimensions
