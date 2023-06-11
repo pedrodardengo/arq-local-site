@@ -10,7 +10,7 @@ import { GridElementDTO } from '@/types/GridElementDTO'
 
 const ProjectsSection = React.forwardRef<HTMLDivElement>((props, ref) => {
 	const router = useRouter()
-	const goToProjectsPage = (slug: string) => {
+	const goToProjectsPage = (slug: string): void => {
 		router.push({ pathname: `/projetos/${slug}` })
 	}
 
@@ -37,7 +37,7 @@ const ProjectsSection = React.forwardRef<HTMLDivElement>((props, ref) => {
 		setExhibitedProjects(gridElement.slice(0, initialGridNumber))
 	}, [gridElement])
 
-	const handleOnResizeResize = () => {
+	const handleOnResize = () => {
 		if (exhibitedProjects.length == gridElement.length) return
 		const gridColumns = windowDimensions.width > THEME.screenSize.mobile ? 3 : 2
 		const toBeRemoved = exhibitedProjects.length % gridColumns
@@ -53,7 +53,7 @@ const ProjectsSection = React.forwardRef<HTMLDivElement>((props, ref) => {
 			gridElement.slice(0, exhibitedProjects.length - toBeRemoved)
 		)
 	}
-	React.useEffect(handleOnResizeResize, [windowDimensions.width])
+	React.useEffect(handleOnResize, [windowDimensions.width])
 	function showMoreProjects() {
 		if (exhibitedProjects.length == gridElement.length) return
 		const projectsToAdd =

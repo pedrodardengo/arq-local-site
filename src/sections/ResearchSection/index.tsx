@@ -10,8 +10,8 @@ import { GridElementDTO } from '@/types/GridElementDTO'
 
 const ResearchesSection = React.forwardRef<HTMLDivElement>((props, ref) => {
 	const router = useRouter()
-	const goToResearchesPage = () => {
-		router.push('/pesquisas')
+	const goToResearchesPage = (slug: string): void => {
+		router.push({ pathname: `/pesquisas/${slug}` })
 	}
 
 	const [researchObjects, setResearchObjects] = React.useState<
@@ -38,7 +38,7 @@ const ResearchesSection = React.forwardRef<HTMLDivElement>((props, ref) => {
 		setExhibitedResearches(researchObjects.slice(0, gridColumns))
 	}, [researchObjects])
 
-	const handleOnResizeResize = () => {
+	const handleOnResize = () => {
 		if (exhibitedResearches.length == researchObjects.length) return
 		const gridColumns = windowDimensions.width > THEME.screenSize.mobile ? 3 : 2
 		const toBeRemoved = exhibitedResearches.length % gridColumns
@@ -54,7 +54,7 @@ const ResearchesSection = React.forwardRef<HTMLDivElement>((props, ref) => {
 			researchObjects.slice(0, exhibitedResearches.length - toBeRemoved)
 		)
 	}
-	React.useEffect(handleOnResizeResize, [windowDimensions.width])
+	React.useEffect(handleOnResize, [windowDimensions.width])
 	function showMoreResearches() {
 		if (exhibitedResearches.length == researchObjects.length) return
 		const researchesToAdd =
@@ -77,7 +77,7 @@ const ResearchesSection = React.forwardRef<HTMLDivElement>((props, ref) => {
 								key={index}
 								src={researchObject.thumbnail.url}
 								alt={researchObject.thumbnail.alt}
-								onClick={goToResearchesPage}
+								onClick={() => goToResearchesPage(researchObject.slug)}
 							/>
 						)
 					})}

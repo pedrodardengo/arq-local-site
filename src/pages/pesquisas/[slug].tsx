@@ -1,14 +1,14 @@
 import React from 'react'
 import NavBar from '@/components/NavBar'
 import { useRouter } from 'next/router'
-import ProjectPageSection from 'src/sections/ProjectPageSection'
+import ResearchPageSection from 'src/sections/ResearchPageSection'
 
 const ProjectPage = () => {
 	const router = useRouter()
 	return (
 		<>
 			<NavBar />
-			<ProjectPageSection slug={router.query['slug'] as string} />
+			<ResearchPageSection slug={router.query['slug'] as string} />
 		</>
 	)
 }

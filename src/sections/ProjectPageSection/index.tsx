@@ -4,7 +4,7 @@ import * as S from './styles'
 import { ProjectDTO } from '@/types/ProjectDTO'
 import InteractiveSlides from '@/components/InteractiveSlides'
 
-const ProjectSection = ({ slug }: { slug: string }) => {
+const ProjectPageSection = ({ slug }: { slug: string }) => {
 	const [project, setProject] = React.useState<ProjectDTO | null>(null)
 
 	const getProject = () => {
@@ -34,4 +34,4 @@ const ProjectSection = ({ slug }: { slug: string }) => {
 	)
 }
 
-export default ProjectSection
+export default ProjectPageSection
