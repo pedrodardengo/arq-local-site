@@ -54,7 +54,6 @@ export const Button = styled.button`
 	width: 50%;
 	border: none !important;
 	background-color: transparent !important;
-	-webkit-tap-highlight-color: transparent;
 	cursor: pointer;
 
 	&:hover {

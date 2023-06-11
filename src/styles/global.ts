@@ -11,7 +11,7 @@ const GlobalStyles = createGlobalStyle`
         background-color: ${THEME.colors.accentColor};
         color: ${THEME.colors.secondaryColor}
       }
-
+			-webkit-tap-highlight-color: transparent !important;
       -webkit-background-clip: padding-box;
       background-clip: padding-box;
 
@@ -86,7 +86,7 @@ const GlobalStyles = createGlobalStyle`
 		font-family: 'Source Sans Pro', sans-serif;
 		overflow-x: hidden;
 	}
-	
+
 	.scrollbar-track {
 		background: linear-gradient(
 			to right,
