@@ -15,7 +15,7 @@
   "lint-staged": {
     "src/**/*": [
       "jest -c ./jest.config.js --findRelatedTests --bail --passWithNoTests",
-      "yarn lint"
+      "npm run lint"
     ]
   },
   "dependencies": {
