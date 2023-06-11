@@ -52,33 +52,31 @@ export const Button = styled.button`
 	z-index: 10;
 	height: 100%;
 	width: 50%;
-	border: none;
-	background-color: transparent;
+	border: none !important;
+	background-color: transparent !important;
+	-webkit-tap-highlight-color: transparent;
 	cursor: pointer;
 
 	&:hover {
 		> div {
-			background-color: ${(props) =>
-				props.disabled ? 'rgba(30, 30, 30, 0.1)' : 'rgba(30, 30, 30, 0.8)'};
 		}
 	}
 `
-const ArrowBox = styled.div<{ disabled: boolean }>`
+const ArrowBox = styled.div<{
+	disabled: boolean
+	overlapsImages: boolean
+}>`
 	position: absolute;
 	bottom: 10px;
-	color: ${THEME.colors.secondaryColor};
-	border-radius: 5px;
-	background-color: ${(props) =>
-		props.disabled ? 'rgba(30, 30, 30, 0.1)' : 'rgba(30, 30, 30, 0.3)'};
+	color: ${(props) =>
+		props.overlapsImages
+			? THEME.colors.secondaryColor
+			: THEME.colors.primaryColor};
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 8px;
 	cursor: pointer;
-	transition: background-color 0.2s ease;
 	&:hover {
-		background-color: ${(props) =>
-			props.disabled ? 'rgba(30, 30, 30, 0.1)' : 'rgba(30, 30, 30, 0.8)'};
 	}
 	> svg {
 		opacity: ${(props) => (props.disabled ? '0.3' : '1')};
