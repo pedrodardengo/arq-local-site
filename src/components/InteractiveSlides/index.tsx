@@ -108,21 +108,17 @@ const InteractiveSlides = ({
 							<FaChevronRight />
 						</S.RightArrow>
 					</S.Button>
-					{images.map((image: ImageDTO, index: number) => {
-						const spacingOffset =
-							((index - (images.length - 1) / 2) * (images.length - 1)) /
-							images.length
-						const sizeOffset = index - (images.length - 1) / 2
-						const offset = spacingOffset * 15 + 10 * sizeOffset
-						return (
-							<S.SlideIndicator
-								key={index}
-								offset={offset}
-								active={currentSlideIndex == index}
-								onClick={() => setCurrentSlideIndex(index)}
-							/>
-						)
-					})}
+					<S.IndicatorsBox numberOfIndicators={images.length}>
+						{images.map((image: ImageDTO, index: number) => {
+							return (
+								<S.SlideIndicator
+									key={index}
+									active={currentSlideIndex == index}
+									onClick={() => setCurrentSlideIndex(index)}
+								/>
+							)
+						})}
+					</S.IndicatorsBox>
 				</S.ButtonContainer>
 			</S.SlideDiv>
 		</S.Wrapper>
