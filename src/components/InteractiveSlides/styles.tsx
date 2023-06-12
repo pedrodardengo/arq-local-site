@@ -166,6 +166,7 @@ export const TextDiv = styled.div`
 	::-webkit-scrollbar {
 		width: 10px;
 		color: transparent;
+		-webkit-appearance: none;
 	}
 
 	::-webkit-scrollbar-track {
@@ -182,5 +183,6 @@ export const TextDiv = styled.div`
 
 	::-webkit-scrollbar-thumb {
 		background: darkgrey;
+		-webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
 	}
 `
