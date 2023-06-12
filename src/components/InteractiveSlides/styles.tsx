@@ -32,6 +32,7 @@ export const SlideDiv = styled.div<{
 		props.imageDimensions.width / props.imageDimensions.height < 1.487
 			? 'flex-start'
 			: 'center'};
+	transition: justify-content 2s ease;
 	@media (max-width: 1400px) {
 		justify-content: flex-start;
 		aspect-ratio: 1.487;
@@ -55,11 +56,6 @@ export const Button = styled.button`
 	border: none !important;
 	background-color: transparent !important;
 	cursor: pointer;
-
-	&:hover {
-		> div {
-		}
-	}
 `
 const ArrowBox = styled.div<{
 	disabled: boolean
@@ -98,7 +94,6 @@ export const SlideIndicator = styled.div<{
 	border-radius: 10px;
 	border: 1px solid ${THEME.colors.accentColor};
 	cursor: pointer;
-	transition: all 0.2s ease;
 	margin: 2px;
 	&:hover {
 		height: 12px;
@@ -135,8 +130,8 @@ export const SlideImage = styled.img<{
 		width: auto;
 	}
 	object-fit: contain;
-	display: ${(props) => (props.active ? 'block' : 'none')};
-	transition: opacity 2s ease-in-out;
+	position: absolute;
+	opacity: ${(props) => (props.active ? '1' : '0')};
 	::selection {
 		background-color: transparent;
 		color: transparent;
@@ -164,9 +159,13 @@ export const TextDiv = styled.div`
 	}
 
 	::-webkit-scrollbar {
-		width: 10px;
-		color: transparent;
 		-webkit-appearance: none;
+		width: 7px;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background-color: rgba(0, 0, 0, 0.5);
+		-webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
 	}
 
 	::-webkit-scrollbar-track {
@@ -179,10 +178,5 @@ export const TextDiv = styled.div`
 		background-size: 1px 100%;
 		background-position: center;
 		background-repeat: no-repeat;
-	}
-
-	::-webkit-scrollbar-thumb {
-		background: darkgrey;
-		-webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
 	}
 `
