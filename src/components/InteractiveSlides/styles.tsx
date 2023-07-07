@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
 	align-items: center;
 	flex-direction: row;
 	gap: 35px;
-	@media (max-width: 1400px) {
+	@media (max-width: 1000px) {
 		flex-direction: column-reverse;
 	}
 
@@ -33,7 +33,7 @@ export const SlideDiv = styled.div<{
 			? 'flex-start'
 			: 'center'};
 	transition: justify-content 2s ease;
-	@media (max-width: 1400px) {
+	@media (max-width: 1000px) {
 		justify-content: flex-start;
 		aspect-ratio: 1.487;
 		height: auto;
@@ -125,7 +125,7 @@ export const SlideImage = styled.img<{
 		props.imageDimensions.width / props.imageDimensions.height > 1.487
 			? '100%'
 			: 'auto'};
-	@media (max-width: 1400px) {
+	@media (max-width: 1000px) {
 		max-width: 100%;
 		width: auto;
 	}
@@ -148,7 +148,7 @@ export const TextDiv = styled.div`
 	> h2 {
 		font-weight: ${THEME.fontWeight.semiBold};
 	}
-	@media (max-width: 1400px) {
+	@media (max-width: 1200px) {
 		width: 100%;
 		min-height: 30vh;
 		padding-right: 8px;
