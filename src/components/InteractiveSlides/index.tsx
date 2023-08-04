@@ -109,7 +109,7 @@ const InteractiveSlides = ({
 						</S.RightArrow>
 					</S.Button>
 					<S.IndicatorsBox numberOfIndicators={images.length}>
-						{images.map((image: ImageDTO, index: number) => {
+						{images.map((_, index: number) => {
 							return (
 								<S.SlideIndicator
 									key={index}

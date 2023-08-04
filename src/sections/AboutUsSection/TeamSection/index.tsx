@@ -3,6 +3,7 @@ import * as S from './styles'
 import Title from '@/components/Title'
 import axios from 'axios'
 import { ProfileDTO } from '@/types/ProfileDTO'
+
 const TeamSection = () => {
 	const [profiles, setProfiles] = React.useState<ProfileDTO[]>([])
 	const [profileHoveredIndex, setProfileHoveredIndex] = React.useState<
@@ -44,7 +45,6 @@ const TeamSection = () => {
 							<div
 								key={index}
 								onMouseEnter={() => setProfileHoveredIndex(index)}
-								onMouseLeave={() => setProfileHoveredIndex(null)}
 							>
 								<img
 									src={profile.image.url}
